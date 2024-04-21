@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://code/UI/ScenceManager.cs" type="Script" id=1]
+[ext_resource path="res://shader/Dissolve2d.shader" type="Shader" id=2]
+[ext_resource path="res://art/theme/radial.png" type="Texture" id=3]
+
+[sub_resource type="ShaderMaterial" id=1]
+shader = ExtResource( 2 )
+shader_param/dissolve_amount = 1.0
+shader_param/fade_color = Color( 0.133333, 0.133333, 0.133333, 0.964706 )
+shader_param/fade = false
+shader_param/inverted = true
+shader_param/dissolve_texture = ExtResource( 3 )
+
+[node name="CanvasLayer" type="CanvasLayer"]
+layer = 10
+follow_viewport_enable = true
+script = ExtResource( 1 )
+ColorRectPath = NodePath("ColorRect")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource( 1 )
+margin_left = -962.0
+margin_top = -539.0
+margin_right = 962.0
+margin_bottom = 539.0
+mouse_filter = 2
+input_pass_on_modal_close_click = false

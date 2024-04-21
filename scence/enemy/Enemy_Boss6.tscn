@@ -1,0 +1,283 @@
+[gd_scene load_steps=37 format=2]
+
+[ext_resource path="res://code/Enemy/Enemy_normal.cs" type="Script" id=1]
+[ext_resource path="res://art/enemy/enemyShip_boss5.png" type="Texture" id=2]
+
+[sub_resource type="AtlasTexture" id=119]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 640, 384, 128, 128 )
+
+[sub_resource type="AtlasTexture" id=120]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 0, 512, 128, 128 )
+
+[sub_resource type="AtlasTexture" id=121]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 128, 512, 128, 128 )
+
+[sub_resource type="AtlasTexture" id=122]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 256, 512, 128, 128 )
+
+[sub_resource type="AtlasTexture" id=123]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 384, 512, 128, 128 )
+
+[sub_resource type="AtlasTexture" id=124]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 512, 512, 128, 128 )
+
+[sub_resource type="AtlasTexture" id=125]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 640, 512, 128, 128 )
+
+[sub_resource type="SpriteFrames" id=38]
+resource_local_to_scene = true
+animations = [ {
+"frames": [ SubResource( 119 ), SubResource( 120 ), SubResource( 121 ), SubResource( 122 ), SubResource( 123 ), SubResource( 124 ), SubResource( 125 ) ],
+"loop": true,
+"name": "fire",
+"speed": 10.0
+} ]
+
+[sub_resource type="StreamTexture" id=70]
+resource_local_to_scene = true
+flags = 4
+load_path = "res://.import/enemyShip_boss5.png-7b48d50fb1c323a89694076df5d232e3.stex"
+
+[sub_resource type="AtlasTexture" id=126]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 0, 0, 128, 128 )
+
+[sub_resource type="AtlasTexture" id=127]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 128, 0, 128, 128 )
+
+[sub_resource type="AtlasTexture" id=128]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 256, 0, 128, 128 )
+
+[sub_resource type="AtlasTexture" id=129]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 384, 0, 128, 128 )
+
+[sub_resource type="AtlasTexture" id=130]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 512, 0, 128, 128 )
+
+[sub_resource type="AtlasTexture" id=131]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 640, 0, 128, 128 )
+
+[sub_resource type="AtlasTexture" id=132]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 0, 128, 128, 128 )
+
+[sub_resource type="AtlasTexture" id=133]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 128, 128, 128, 128 )
+
+[sub_resource type="AtlasTexture" id=134]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 256, 128, 128, 128 )
+
+[sub_resource type="AtlasTexture" id=135]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 384, 128, 128, 128 )
+
+[sub_resource type="AtlasTexture" id=136]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 512, 128, 128, 128 )
+
+[sub_resource type="AtlasTexture" id=137]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 640, 128, 128, 128 )
+
+[sub_resource type="AtlasTexture" id=138]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 0, 256, 128, 128 )
+
+[sub_resource type="SpriteFrames" id=52]
+resource_local_to_scene = true
+animations = [ {
+"frames": [ SubResource( 126 ), SubResource( 127 ), SubResource( 128 ), SubResource( 129 ), SubResource( 130 ), SubResource( 131 ), SubResource( 132 ), SubResource( 133 ), SubResource( 134 ), SubResource( 135 ), SubResource( 136 ), SubResource( 137 ), SubResource( 138 ) ],
+"loop": false,
+"name": "destroy",
+"speed": 10.0
+} ]
+
+[sub_resource type="AtlasTexture" id=139]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 256, 256, 128, 128 )
+
+[sub_resource type="AtlasTexture" id=140]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 384, 256, 128, 128 )
+
+[sub_resource type="AtlasTexture" id=141]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 512, 256, 128, 128 )
+
+[sub_resource type="AtlasTexture" id=142]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 640, 256, 128, 128 )
+
+[sub_resource type="AtlasTexture" id=143]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 0, 384, 128, 128 )
+
+[sub_resource type="AtlasTexture" id=144]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 128, 384, 128, 128 )
+
+[sub_resource type="AtlasTexture" id=145]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 256, 384, 128, 128 )
+
+[sub_resource type="AtlasTexture" id=146]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 384, 384, 128, 128 )
+
+[sub_resource type="AtlasTexture" id=147]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 512, 384, 128, 128 )
+
+[sub_resource type="SpriteFrames" id=53]
+resource_local_to_scene = true
+animations = [ {
+"frames": [ SubResource( 139 ), SubResource( 140 ), SubResource( 141 ), SubResource( 142 ), SubResource( 143 ), SubResource( 144 ), SubResource( 145 ), SubResource( 146 ), SubResource( 147 ) ],
+"loop": true,
+"name": "attack",
+"speed": 10.0
+} ]
+
+[sub_resource type="Animation" id=39]
+resource_name = "weakup"
+tracks/0/type = "value"
+tracks/0/path = NodePath("body/body:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0.1, 0.1 ), Vector2( 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("body/fire:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0.1, 0.1 ), Vector2( 1, 1 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("CollisionPolygon2D:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0.1, 0.1 ), Vector2( 1, 1 ) ]
+}
+
+[node name="enemy_Boss6" type="KinematicBody2D"]
+scale = Vector2( 1.5, 1.5 )
+collision_layer = 4
+collision_mask = 7
+script = ExtResource( 1 )
+CollisionPolygon2DPath = NodePath("CollisionPolygon2D")
+EngineFirePath = NodePath("body/fire/engineFire")
+BodyPath = NodePath("body/body")
+AnimationPlayerWeakupPath = NodePath("AnimationPlayer")
+DestoryPath = NodePath("body/destroy/destory")
+attackPath = NodePath("body/attack/attack")
+ShootPositionPath = [ NodePath("body/attack/shootPositon1"), NodePath("body/attack/shootPositon2") ]
+showPath = NodePath("VisibilityNotifier2D")
+_isBoss = true
+
+[node name="body" type="Node2D" parent="."]
+rotation = 1.5708
+
+[node name="fire" type="Node2D" parent="body"]
+
+[node name="engineFire" type="AnimatedSprite" parent="body/fire"]
+frames = SubResource( 38 )
+animation = "fire"
+playing = true
+
+[node name="body" type="Node2D" parent="body"]
+
+[node name="body" type="Sprite" parent="body/body"]
+texture = SubResource( 70 )
+hframes = 6
+vframes = 5
+frame = 13
+
+[node name="destroy" type="Node2D" parent="body"]
+
+[node name="destory" type="AnimatedSprite" parent="body/destroy"]
+modulate = Color( 1, 1, 1, 0 )
+frames = SubResource( 52 )
+animation = "destroy"
+
+[node name="attack" type="Node2D" parent="body"]
+
+[node name="attack" type="AnimatedSprite" parent="body/attack"]
+modulate = Color( 1, 1, 1, 0 )
+frames = SubResource( 53 )
+animation = "attack"
+
+[node name="shootPositon2" type="Node2D" parent="body/attack"]
+position = Vector2( 16.6666, -20.6667 )
+
+[node name="shootPositon1" type="Node2D" parent="body/attack"]
+position = Vector2( -16.6667, -21.3333 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2( 1.33333, 0.666667 )
+build_mode = 1
+polygon = PoolVector2Array( -8.66666, -18, -19.3333, -18.6667, -19.3333, -8.66667, -29.3333, -5.33333, -46.6667, -2, -46.6667, 0.666666, -28.6667, 3.33333, -19.3333, 6.66667, -19.3333, 17.3333, -8, 16, 5.33334, 35.3333, 13.3333, 18, 26, 11.3333, 33.3333, 22, 41.3333, 2, 41.3333, -5.33333, 33.3333, -24, 26, -12, 14, -19.3333, 5.33334, -36.6667 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/weakup = SubResource( 39 )
+
+[node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]

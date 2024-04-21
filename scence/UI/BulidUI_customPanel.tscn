@@ -1,0 +1,40 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://art/theme/UItheme.tres" type="Theme" id=1]
+[ext_resource path="res://code/bulidScence/BulidUI_customPanel.cs" type="Script" id=2]
+[ext_resource path="res://art/font/BoutiqueBitmap9x9_1.9.ttf" type="DynamicFontData" id=3]
+
+[sub_resource type="DynamicFont" id=2]
+size = 23
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=1]
+size = 23
+font_data = ExtResource( 3 )
+
+[node name="Panel2" type="Panel"]
+margin_left = 1.0
+margin_top = -1.0
+margin_right = 422.0
+margin_bottom = 50.0
+theme = ExtResource( 1 )
+script = ExtResource( 2 )
+LabelText1Path = NodePath("Label")
+LabelText2Path = NodePath("Label2")
+
+[node name="Label" type="Label" parent="."]
+anchor_bottom = 1.0
+margin_right = 192.0
+custom_fonts/font = SubResource( 2 )
+text = "power:"
+align = 2
+valign = 1
+
+[node name="Label2" type="Label" parent="."]
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -200.0
+custom_fonts/font = SubResource( 1 )
+text = "12314"
+valign = 1

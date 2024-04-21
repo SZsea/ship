@@ -1,0 +1,70 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://code/MainMenuScence.cs" type="Script" id=1]
+[ext_resource path="res://scence/UI/GameMainBg.tscn" type="PackedScene" id=2]
+[ext_resource path="res://art/font/BoutiqueBitmap9x9_1.9.ttf" type="DynamicFontData" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+resource_local_to_scene = true
+size = 30
+font_data = ExtResource( 3 )
+
+[node name="MainMenuScence" type="Node2D"]
+script = ExtResource( 1 )
+Camera = NodePath("Camera2D")
+startButton = NodePath("UIRoot/startButton")
+settingButton = NodePath("UIRoot/setting")
+detailsButton = NodePath("UIRoot/detail")
+quitButton = NodePath("UIRoot/quit")
+selfButton = NodePath("UIRoot/makeOne")
+continueButton = NodePath("UIRoot/continue")
+bgPath = NodePath("bg")
+
+[node name="bg" parent="." instance=ExtResource( 2 )]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="UIRoot" type="Node2D" parent="."]
+
+[node name="startButton" type="Button" parent="UIRoot"]
+margin_left = -836.0
+margin_top = 119.0
+margin_right = -676.0
+margin_bottom = 183.0
+custom_fonts/font = SubResource( 1 )
+
+[node name="setting" type="Button" parent="UIRoot"]
+margin_left = -834.0
+margin_top = 194.0
+margin_right = -674.0
+margin_bottom = 258.0
+custom_fonts/font = SubResource( 1 )
+
+[node name="detail" type="Button" parent="UIRoot"]
+margin_left = -835.0
+margin_top = 266.0
+margin_right = -675.0
+margin_bottom = 330.0
+custom_fonts/font = SubResource( 1 )
+
+[node name="quit" type="Button" parent="UIRoot"]
+margin_left = -833.0
+margin_top = 338.0
+margin_right = -673.0
+margin_bottom = 402.0
+custom_fonts/font = SubResource( 1 )
+
+[node name="makeOne" type="Button" parent="UIRoot"]
+visible = false
+margin_left = 661.0
+margin_top = 344.0
+margin_right = 821.0
+margin_bottom = 408.0
+custom_fonts/font = SubResource( 1 )
+
+[node name="continue" type="Button" parent="UIRoot"]
+margin_left = -835.0
+margin_top = 46.0
+margin_right = -675.0
+margin_bottom = 110.0
+custom_fonts/font = SubResource( 1 )

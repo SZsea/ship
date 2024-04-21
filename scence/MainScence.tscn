@@ -1,0 +1,29 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://code/MainScence.cs" type="Script" id=1]
+[ext_resource path="res://scence/MainMenuScence.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scence/ShipBulidScence.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scence/GameScence.tscn" type="PackedScene" id=4]
+[ext_resource path="res://code/GameData.cs" type="Script" id=5]
+[ext_resource path="res://scence/ProgressScence.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scence/UI/ScenceManager.tscn" type="PackedScene" id=7]
+
+[node name="Main" type="Node2D"]
+script = ExtResource( 1 )
+__meta__ = {
+"entity_name": "circle"
+}
+PackedMainMenuScence = ExtResource( 2 )
+PackedGameScence = ExtResource( 4 )
+PackedShipBulidScence = ExtResource( 3 )
+ProgressBuildScence = ExtResource( 6 )
+data = NodePath("data")
+ViewRoot = NodePath("ViewRoot")
+ChangeViewPath = NodePath("CanvasLayer")
+
+[node name="data" type="Node2D" parent="."]
+script = ExtResource( 5 )
+
+[node name="ViewRoot" type="Node2D" parent="."]
+
+[node name="CanvasLayer" parent="." instance=ExtResource( 7 )]

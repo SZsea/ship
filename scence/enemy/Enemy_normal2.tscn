@@ -1,0 +1,204 @@
+[gd_scene load_steps=26 format=2]
+
+[ext_resource path="res://code/Enemy/Enemy_normal.cs" type="Script" id=2]
+[ext_resource path="res://art/enemy/enemyShip_weapon2.png" type="Texture" id=3]
+
+[sub_resource type="AtlasTexture" id=48]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 0, 64, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=49]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 0, 128, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=50]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 0, 192, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=51]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 0, 256, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=52]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 0, 320, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=53]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 0, 384, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=54]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 0, 448, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=55]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 0, 512, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=56]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 0, 576, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=57]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 0, 640, 64, 64 )
+
+[sub_resource type="SpriteFrames" id=58]
+resource_local_to_scene = true
+animations = [ {
+"frames": [ SubResource( 48 ), SubResource( 49 ), SubResource( 50 ), SubResource( 51 ), SubResource( 52 ), SubResource( 53 ), SubResource( 54 ), SubResource( 55 ), SubResource( 56 ), SubResource( 57 ) ],
+"loop": true,
+"name": "fire",
+"speed": 10.0
+} ]
+
+[sub_resource type="AtlasTexture" id=59]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 0, 1216, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=60]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 0, 1152, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=61]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 0, 1088, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=62]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 0, 1024, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=63]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 0, 960, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=64]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 0, 896, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=65]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 0, 832, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=66]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 0, 768, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=67]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 0, 704, 64, 64 )
+
+[sub_resource type="SpriteFrames" id=68]
+resource_local_to_scene = true
+animations = [ {
+"frames": [ SubResource( 59 ), SubResource( 60 ), SubResource( 61 ), SubResource( 62 ), SubResource( 63 ), SubResource( 64 ), SubResource( 65 ), SubResource( 66 ), SubResource( 67 ) ],
+"loop": true,
+"name": "destroy",
+"speed": 10.0
+} ]
+
+[sub_resource type="CircleShape2D" id=69]
+radius = 14.6818
+
+[sub_resource type="Animation" id=70]
+resource_name = "weakup"
+tracks/0/type = "value"
+tracks/0/path = NodePath("body/body:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0.1, 0.1 ), Vector2( 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("body/fire:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0.1, 0.1 ), Vector2( 1, 1 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("CollisionShape2D:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0.1, 0.1 ), Vector2( 1, 1 ) ]
+}
+
+[node name="enemy_normal2" type="KinematicBody2D"]
+scale = Vector2( 1.5, 1.5 )
+collision_layer = 4
+collision_mask = 7
+script = ExtResource( 2 )
+CollisionShape2DPath = NodePath("CollisionShape2D")
+EngineFirePath = NodePath("body/fire/fire")
+BodyPath = NodePath("body/body")
+AnimationPlayerWeakupPath = NodePath("AnimationPlayer")
+DestoryPath = NodePath("body/destroy/destroy")
+ShootPositionPath = [  ]
+showPath = NodePath("VisibilityNotifier2D")
+
+[node name="body" type="Node2D" parent="."]
+rotation = 1.5708
+
+[node name="body" type="Node2D" parent="body"]
+
+[node name="body" type="Sprite" parent="body/body"]
+texture = ExtResource( 3 )
+vframes = 20
+
+[node name="fire" type="Node2D" parent="body"]
+
+[node name="fire" type="AnimatedSprite" parent="body/fire"]
+frames = SubResource( 58 )
+animation = "fire"
+frame = 2
+playing = true
+
+[node name="destroy" type="Node2D" parent="body"]
+
+[node name="destroy" type="AnimatedSprite" parent="body/destroy"]
+modulate = Color( 1, 1, 1, 0 )
+frames = SubResource( 68 )
+animation = "destroy"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 69 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/weakup = SubResource( 70 )
+
+[node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]

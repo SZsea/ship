@@ -1,0 +1,6 @@
+id,allShow,allAddition,partShow,ch,eng
+1,1,1,1,能量,energy 
+2,1,1,1,耐久,durable 
+4,1,1,1,速度,speed
+5,0,0,1,伤害,damage
+101,0,0,1,重装填时间,reload time 

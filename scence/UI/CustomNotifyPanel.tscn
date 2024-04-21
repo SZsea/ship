@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://code/UI/CustomNotifyPanel.cs" type="Script" id=1]
+[ext_resource path="res://art/font/BoutiqueBitmap9x9_1.9.ttf" type="DynamicFontData" id=2]
+
+[sub_resource type="DynamicFont" id=2]
+font_data = ExtResource( 2 )
+
+[node name="Control" type="Control"]
+script = ExtResource( 1 )
+LabelPath = NodePath("Label")
+TimerPath = NodePath("Timer")
+
+[node name="Label" type="Label" parent="."]
+margin_right = 348.0
+margin_bottom = 94.0
+custom_fonts/font = SubResource( 2 )
+text = "1111111111111111"
+align = 1
+valign = 1
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0

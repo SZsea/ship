@@ -1,0 +1,62 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://shader/BlackHole.shader" type="Shader" id=1]
+[ext_resource path="res://shader/BlackHoleRing.shader" type="Shader" id=2]
+[ext_resource path="res://code/mapScence/starManage/BlackHole.cs" type="Script" id=3]
+
+[sub_resource type="Gradient" id=1]
+colors = PoolColorArray( 0.254902, 0.254902, 0.25098, 1, 0.972549, 0.847059, 0.772549, 1 )
+
+[sub_resource type="GradientTexture" id=2684]
+gradient = SubResource( 1 )
+
+[sub_resource type="ShaderMaterial" id=3]
+shader = ExtResource( 1 )
+shader_param/pixels = 1000.0
+shader_param/black_color = Color( 0, 0, 0, 1 )
+shader_param/radius = 0.263
+shader_param/light_width = 0.028
+shader_param/colorscheme = SubResource( 2684 )
+
+[sub_resource type="Gradient" id=5]
+offsets = PoolRealArray( 0, 0.25, 0.5, 0.75, 1 )
+colors = PoolColorArray( 1, 1, 0.921569, 1, 1, 0.984314, 0.670588, 1, 1, 0.862745, 0.65098, 1, 0.866667, 0.709804, 0.619608, 1, 0.880859, 0.675293, 0.657204, 1 )
+
+[sub_resource type="GradientTexture" id=2685]
+gradient = SubResource( 5 )
+
+[sub_resource type="ShaderMaterial" id=4]
+shader = ExtResource( 2 )
+shader_param/pixels = 3000.0
+shader_param/rotation = 0.187
+shader_param/light_origin = Vector2( 0.607, 0.444 )
+shader_param/time_speed = 0.2
+shader_param/disk_width = 0.065
+shader_param/ring_perspective = 14.0
+shader_param/should_dither = true
+shader_param/size = 50.0
+shader_param/OCTAVES = 3
+shader_param/seed = 2.372
+shader_param/time = 2957.67
+shader_param/colorscheme = SubResource( 2685 )
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 3 )
+pixels = 1000.0
+run = true
+BlackHolePath = NodePath("BlackHole")
+DiskPath = NodePath("Disk")
+
+[node name="BlackHole" type="ColorRect" parent="."]
+material = SubResource( 3 )
+margin_right = 200.0
+margin_bottom = 200.0
+
+[node name="Disk" type="ColorRect" parent="."]
+material = SubResource( 4 )
+margin_left = -200.0
+margin_top = -200.0
+margin_right = 400.0
+margin_bottom = 400.0

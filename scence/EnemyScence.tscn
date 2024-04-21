@@ -1,0 +1,13 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://code/EnemyScence.cs" type="Script" id=1]
+[ext_resource path="res://icon.png" type="Texture" id=2]
+[ext_resource path="res://scence/BulletScence.tscn" type="PackedScene" id=3]
+
+[node name="EnemyScence" type="Node2D"]
+script = ExtResource( 1 )
+_BulletScence = ExtResource( 3 )
+
+[node name="Sprite" type="Sprite" parent="."]
+visible = false
+texture = ExtResource( 2 )

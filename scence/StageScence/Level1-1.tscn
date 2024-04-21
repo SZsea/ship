@@ -1,0 +1,420 @@
+[gd_scene load_steps=33 format=2]
+
+[ext_resource path="res://shader/PlanetUnder.shader" type="Shader" id=1]
+[ext_resource path="res://code/StageScence.cs" type="Script" id=2]
+[ext_resource path="res://art/backgroud/Stars-Big_1_2_PC.png" type="Texture" id=3]
+[ext_resource path="res://shader/PlanetLandmass.shader" type="Shader" id=4]
+[ext_resource path="res://code/mapScence/starManage/NoAtmosphere.cs" type="Script" id=5]
+[ext_resource path="res://art/backgroud/Nebula Blue.png" type="Texture" id=7]
+[ext_resource path="res://shader/StarBlobs.shader" type="Shader" id=8]
+[ext_resource path="res://shader/StarFlares.shader" type="Shader" id=9]
+[ext_resource path="res://shader/Star.shader" type="Shader" id=10]
+[ext_resource path="res://code/mapScence/starManage/Star.cs" type="Script" id=11]
+[ext_resource path="res://shader/Clouds.shader" type="Shader" id=12]
+[ext_resource path="res://code/mapScence/starManage/LandMasses.cs" type="Script" id=13]
+[ext_resource path="res://shader/Craters.shader" type="Shader" id=14]
+[ext_resource path="res://shader/NoAtmosphere.shader" type="Shader" id=15]
+[ext_resource path="res://shader/Rivers.shader" type="Shader" id=16]
+[ext_resource path="res://code/mapScence/starManage/LavaWorld.cs" type="Script" id=17]
+
+[sub_resource type="ShaderMaterial" id=1]
+shader = ExtResource( 15 )
+shader_param/pixels = 500.0
+shader_param/rotation = 0.0
+shader_param/light_origin = Vector2( 0.4, 0.5 )
+shader_param/time_speed = 0.4
+shader_param/dither_size = 2.0
+shader_param/light_border_1 = 0.615
+shader_param/light_border_2 = 0.729
+shader_param/color1 = Color( 0.458824, 0.537255, 0.584314, 1 )
+shader_param/color2 = Color( 0.301961, 0.345098, 0.341176, 1 )
+shader_param/color3 = Color( 0.192157, 0.164706, 0.184314, 1 )
+shader_param/size = 8.0
+shader_param/OCTAVES = 4
+shader_param/seed = 1.012
+shader_param/time = 402.183
+shader_param/should_dither = true
+
+[sub_resource type="ShaderMaterial" id=2]
+shader = ExtResource( 14 )
+shader_param/pixels = 500.0
+shader_param/rotation = 0.0
+shader_param/light_origin = Vector2( 0.4, 0.5 )
+shader_param/time_speed = 0.001
+shader_param/light_border = 0.465
+shader_param/color1 = Color( 0.176471, 0.223529, 0.219608, 1 )
+shader_param/color2 = Color( 0.141176, 0.117647, 0.133333, 1 )
+shader_param/size = 5.0
+shader_param/seed = 4.517
+shader_param/time = 201092.0
+
+[sub_resource type="ShaderMaterial" id=2669]
+shader = ExtResource( 15 )
+shader_param/pixels = 1000.0
+shader_param/rotation = 0.0
+shader_param/light_origin = Vector2( 0.365, 0.6 )
+shader_param/time_speed = 0.2
+shader_param/dither_size = 2.0
+shader_param/light_border_1 = 0.4
+shader_param/light_border_2 = 0.6
+shader_param/color1 = Color( 0.560784, 0.301961, 0.341176, 1 )
+shader_param/color2 = Color( 0.321569, 0.2, 0.247059, 1 )
+shader_param/color3 = Color( 0.239216, 0.160784, 0.211765, 1 )
+shader_param/size = 10.0
+shader_param/OCTAVES = 3
+shader_param/seed = 1.551
+shader_param/time = 2010.92
+shader_param/should_dither = true
+
+[sub_resource type="ShaderMaterial" id=2670]
+shader = ExtResource( 14 )
+shader_param/pixels = 1000.0
+shader_param/rotation = 0.0
+shader_param/light_origin = Vector2( 0.365, 0.6 )
+shader_param/time_speed = 0.2
+shader_param/light_border = 0.4
+shader_param/color1 = Color( 0.321569, 0.2, 0.247059, 1 )
+shader_param/color2 = Color( 0.239216, 0.160784, 0.211765, 1 )
+shader_param/size = 3.5
+shader_param/seed = 1.561
+shader_param/time = 703.821
+
+[sub_resource type="ShaderMaterial" id=3]
+shader = ExtResource( 16 )
+shader_param/pixels = 1000.0
+shader_param/rotation = 0.0
+shader_param/light_origin = Vector2( 0.365, 0.6 )
+shader_param/time_speed = 0.2
+shader_param/light_border_1 = 0.019
+shader_param/light_border_2 = 0.036
+shader_param/river_cutoff = 0.579
+shader_param/color1 = Color( 1, 0.537255, 0.2, 1 )
+shader_param/color2 = Color( 0.901961, 0.270588, 0.223529, 1 )
+shader_param/color3 = Color( 0.678431, 0.184314, 0.270588, 1 )
+shader_param/size = 10.0
+shader_param/OCTAVES = 4
+shader_param/seed = 2.527
+shader_param/time = 2010.92
+
+[sub_resource type="ShaderMaterial" id=2660]
+shader = ExtResource( 8 )
+shader_param/pixels = 500.0
+shader_param/color = Color( 1, 1, 1, 1 )
+shader_param/time_speed = 0.05
+shader_param/time = 1980.75
+shader_param/rotation = 0.0
+shader_param/seed = 3.075
+shader_param/circle_amount = 2.0
+shader_param/circle_size = 1.0
+shader_param/size = 4.93
+shader_param/OCTAVES = 4
+
+[sub_resource type="Gradient" id=2675]
+offsets = PoolRealArray( 0, 0.33, 0.66, 1 )
+colors = PoolColorArray( 0.960784, 1, 0.909804, 1, 1, 0.847059, 0.196078, 1, 1, 0.509804, 0.231373, 1, 0.486275, 0.0980392, 0.101961, 1 )
+
+[sub_resource type="GradientTexture" id=2672]
+gradient = SubResource( 2675 )
+
+[sub_resource type="ShaderMaterial" id=4]
+shader = ExtResource( 10 )
+shader_param/pixels = 500.0
+shader_param/time_speed = 0.05
+shader_param/time = 899.885
+shader_param/rotation = 0.0
+shader_param/should_dither = false
+shader_param/seed = 4.837
+shader_param/size = 4.463
+shader_param/OCTAVES = 4
+shader_param/TILES = 1.0
+shader_param/colorramp = SubResource( 2672 )
+
+[sub_resource type="Gradient" id=2676]
+colors = PoolColorArray( 1, 0.847059, 0.196078, 1, 0.960784, 1, 0.909804, 1 )
+
+[sub_resource type="GradientTexture" id=2674]
+gradient = SubResource( 2676 )
+
+[sub_resource type="ShaderMaterial" id=7]
+shader = ExtResource( 9 )
+shader_param/pixels = 500.0
+shader_param/time_speed = 0.05
+shader_param/time = 723.93
+shader_param/rotation = 0.0
+shader_param/should_dither = false
+shader_param/storm_width = 0.3
+shader_param/storm_dither_width = 0.0
+shader_param/scale = 1.0
+shader_param/seed = 5.129
+shader_param/circle_amount = 2.0
+shader_param/circle_scale = 1.0
+shader_param/size = 1.2
+shader_param/OCTAVES = 4
+shader_param/colorramp = SubResource( 2674 )
+
+[sub_resource type="ShaderMaterial" id=2658]
+shader = ExtResource( 1 )
+shader_param/pixels = 500.0
+shader_param/rotation = 0.0
+shader_param/light_origin = Vector2( 0.988, 0.247 )
+shader_param/time_speed = 0.1
+shader_param/dither_size = 2.0
+shader_param/light_border_1 = 0.4
+shader_param/light_border_2 = 0.6
+shader_param/color1 = Color( 0.572549, 0.909804, 0.752941, 1 )
+shader_param/color2 = Color( 0.309804, 0.643137, 0.721569, 1 )
+shader_param/color3 = Color( 0.172549, 0.207843, 0.301961, 1 )
+shader_param/size = 5.228
+shader_param/OCTAVES = 3
+shader_param/seed = 10.0
+shader_param/time = 211.146
+shader_param/should_dither = false
+shader_param/viewing_pos = Vector2( 0, 0 )
+shader_param/viewing_dis = 1000.0
+shader_param/rotation_center = Vector2( 0, 0 )
+shader_param/rotation_speed = 1.0
+
+[sub_resource type="ShaderMaterial" id=2662]
+shader = ExtResource( 4 )
+shader_param/pixels = 500.0
+shader_param/rotation = 0.2
+shader_param/light_origin = Vector2( 0.988, 0.247 )
+shader_param/time_speed = 0.2
+shader_param/dither_size = 2.0
+shader_param/light_border_1 = 0.2
+shader_param/light_border_2 = 0.534
+shader_param/land_cutoff = 0.633
+shader_param/viewing_pos = Vector2( 0, 0 )
+shader_param/viewing_dis = 1000.0
+shader_param/rotation_center = Vector2( 0, 0 )
+shader_param/rotation_speed = 0.5
+shader_param/col1 = Color( 0.784314, 0.831373, 0.364706, 1 )
+shader_param/col2 = Color( 0.388235, 0.670588, 0.247059, 1 )
+shader_param/col3 = Color( 0.184314, 0.341176, 0.32549, 1 )
+shader_param/col4 = Color( 0.156863, 0.207843, 0.25098, 1 )
+shader_param/size = 4.292
+shader_param/OCTAVES = 6
+shader_param/seed = 7.947
+shader_param/time = 86.4694
+
+[sub_resource type="ShaderMaterial" id=2659]
+shader = ExtResource( 12 )
+shader_param/pixels = 500.0
+shader_param/rotation = 0.0
+shader_param/cloud_cover = 0.415
+shader_param/light_origin = Vector2( 0.988, 0.247 )
+shader_param/time_speed = 0.47
+shader_param/stretch = 2.0
+shader_param/cloud_curve = 1.3
+shader_param/light_border_1 = 0.52
+shader_param/light_border_2 = 0.62
+shader_param/base_color = Color( 0.87451, 0.878431, 0.909804, 1 )
+shader_param/outline_color = Color( 0.639216, 0.654902, 0.760784, 1 )
+shader_param/shadow_base_color = Color( 0.407843, 0.435294, 0.6, 1 )
+shader_param/shadow_outline_color = Color( 0.25098, 0.286275, 0.45098, 1 )
+shader_param/size = 7.745
+shader_param/OCTAVES = 2
+shader_param/seed = 5.939
+shader_param/time = 33.1801
+shader_param/viewing_pos = Vector2( 0, 0 )
+shader_param/viewing_dis = 1000.0
+shader_param/rotation_center = Vector2( 0, 0 )
+shader_param/rotation_speed = 1.0
+
+[sub_resource type="RectangleShape2D" id=1452]
+extents = Vector2( 4000, 4000 )
+
+[node name="StageScence" type="Node2D"]
+script = ExtResource( 2 )
+fightAreaPath = NodePath("Area2D")
+fightAreaInPath = NodePath("Area2D/CollisionShape2D")
+
+[node name="stageBG" type="ParallaxBackground" parent="."]
+
+[node name="bg1" type="ParallaxLayer" parent="stageBG"]
+motion_scale = Vector2( 0.01, 0.01 )
+
+[node name="TextureRect" type="TextureRect" parent="stageBG/bg1"]
+margin_left = -6000.0
+margin_top = -6000.0
+margin_right = 6000.0
+margin_bottom = 6000.0
+texture = ExtResource( 7 )
+stretch_mode = 2
+
+[node name="bg2" type="ParallaxLayer" parent="stageBG"]
+motion_scale = Vector2( 0.02, 0.02 )
+
+[node name="TextureRect" type="TextureRect" parent="stageBG/bg2"]
+margin_left = -6000.0
+margin_top = -6000.0
+margin_right = 6000.0
+margin_bottom = 6000.0
+texture = ExtResource( 3 )
+stretch_mode = 2
+
+[node name="planet4" type="ParallaxLayer" parent="stageBG"]
+motion_scale = Vector2( 0.08, 0.08 )
+
+[node name="Control" type="Control" parent="stageBG/planet4"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -204.0
+margin_top = 135.0
+margin_right = -204.0
+margin_bottom = 135.0
+script = ExtResource( 5 )
+pixels = 500.0
+planetSize = Vector2( 50, 50 )
+run = true
+PlanetUnderPath = NodePath("PlanetUnder")
+CratersPath = NodePath("Craters")
+lightpoint = Vector2( 0.4, 0.5 )
+
+[node name="PlanetUnder" type="ColorRect" parent="stageBG/planet4/Control"]
+material = SubResource( 1 )
+margin_right = 50.0
+margin_bottom = 50.0
+
+[node name="Craters" type="ColorRect" parent="stageBG/planet4/Control"]
+material = SubResource( 2 )
+margin_right = 50.0
+margin_bottom = 50.0
+
+[node name="planet3" type="ParallaxLayer" parent="stageBG"]
+motion_scale = Vector2( 0.1, 0.1 )
+
+[node name="Control" type="Control" parent="stageBG/planet3"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 836.0
+margin_top = -636.0
+margin_right = 836.0
+margin_bottom = -636.0
+script = ExtResource( 5 )
+pixels = 500.0
+planetSize = Vector2( 10, 10 )
+run = true
+PlanetUnderPath = NodePath("PlanetUnder")
+CratersPath = NodePath("Craters")
+lightpoint = Vector2( 0.4, 0.5 )
+
+[node name="PlanetUnder" type="ColorRect" parent="stageBG/planet3/Control"]
+material = SubResource( 1 )
+margin_right = 10.0
+margin_bottom = 10.0
+
+[node name="Craters" type="ColorRect" parent="stageBG/planet3/Control"]
+material = SubResource( 2 )
+margin_right = 10.0
+margin_bottom = 10.0
+
+[node name="planet2" type="ParallaxLayer" parent="stageBG"]
+motion_scale = Vector2( 0.2, 0.2 )
+
+[node name="Control" type="Control" parent="stageBG/planet2"]
+margin_left = 1173.0
+margin_top = -926.0
+margin_right = 1173.0
+margin_bottom = -926.0
+rect_pivot_offset = Vector2( 0, 15 )
+script = ExtResource( 17 )
+pixels = 1000.0
+planetSize = Vector2( 50, 50 )
+lightpoint = Vector2( 0.365, 0.6 )
+run = true
+LavaWorldPlanetUnderPath = NodePath("PlanetUnder")
+LavaWorldCratersPath = NodePath("Craters")
+LavaWorldLavaRiversPath = NodePath("LavaRivers")
+
+[node name="PlanetUnder" type="ColorRect" parent="stageBG/planet2/Control"]
+material = SubResource( 2669 )
+margin_right = 50.0
+margin_bottom = 50.0
+
+[node name="Craters" type="ColorRect" parent="stageBG/planet2/Control"]
+material = SubResource( 2670 )
+margin_right = 50.0
+margin_bottom = 50.0
+
+[node name="LavaRivers" type="ColorRect" parent="stageBG/planet2/Control"]
+material = SubResource( 3 )
+margin_right = 50.0
+margin_bottom = 50.0
+
+[node name="star" type="ParallaxLayer" parent="stageBG"]
+motion_scale = Vector2( 0.5, 0.5 )
+
+[node name="star" type="Control" parent="stageBG/star"]
+margin_left = 689.0
+margin_top = -663.0
+margin_right = 689.0
+margin_bottom = -663.0
+script = ExtResource( 11 )
+pixels = 500.0
+planetSize = Vector2( 150, 150 )
+planetDither = false
+run = true
+StarBackgroundPath = NodePath("StarBackground")
+StarPath = NodePath("Star")
+StarFlaresPath = NodePath("StarFlares")
+
+[node name="StarBackground" type="ColorRect" parent="stageBG/star/star"]
+material = SubResource( 2660 )
+margin_left = -75.0
+margin_top = -75.0
+margin_right = 225.0
+margin_bottom = 225.0
+
+[node name="Star" type="ColorRect" parent="stageBG/star/star"]
+material = SubResource( 4 )
+margin_right = 150.0
+margin_bottom = 150.0
+
+[node name="StarFlares" type="ColorRect" parent="stageBG/star/star"]
+material = SubResource( 7 )
+margin_left = -75.0
+margin_top = -75.0
+margin_right = 225.0
+margin_bottom = 225.0
+
+[node name="planet" type="ParallaxLayer" parent="stageBG"]
+motion_scale = Vector2( 0.6, 0.6 )
+
+[node name="Control" type="Control" parent="stageBG/planet"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -403.0
+margin_top = 22.0
+margin_right = -403.0
+margin_bottom = 22.0
+script = ExtResource( 13 )
+pixels = 500.0
+planetSize = Vector2( 300, 300 )
+planetDither = false
+lightpoint = Vector2( 0.988, 0.247 )
+run = true
+LandMassesWaterPath = NodePath("Water")
+LandMassesLandPath = NodePath("Land")
+LandMassesCloudPath = NodePath("Cloud")
+
+[node name="Water" type="ColorRect" parent="stageBG/planet/Control"]
+material = SubResource( 2658 )
+margin_right = 300.0
+margin_bottom = 300.0
+
+[node name="Land" type="ColorRect" parent="stageBG/planet/Control"]
+material = SubResource( 2662 )
+margin_right = 300.0
+margin_bottom = 300.0
+
+[node name="Cloud" type="ColorRect" parent="stageBG/planet/Control"]
+material = SubResource( 2659 )
+margin_right = 300.0
+margin_bottom = 300.0
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2( 0, 36 )
+shape = SubResource( 1452 )

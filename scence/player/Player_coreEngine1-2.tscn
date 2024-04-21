@@ -1,0 +1,244 @@
+[gd_scene load_steps=22 format=2]
+
+[ext_resource path="res://art/player/spceship-Sheet.png" type="Texture" id=1]
+[ext_resource path="res://code/player/Player_coreEngine.cs" type="Script" id=2]
+[ext_resource path="res://art/player/engine_effect1.png" type="Texture" id=3]
+
+[sub_resource type="Gradient" id=19]
+offsets = PoolRealArray( 0, 0.5, 1 )
+colors = PoolColorArray( 0.909804, 0.231373, 0.231373, 1, 0.984314, 0.419608, 0.113725, 1, 0.968627, 0.588235, 0.0901961, 1 )
+
+[sub_resource type="GradientTexture" id=20]
+gradient = SubResource( 19 )
+
+[sub_resource type="Curve" id=17]
+_data = [ Vector2( 0, 0.820454 ), 0.0, 0.0, 0, 0, Vector2( 0.993407, 0 ), -2.66126, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=18]
+curve = SubResource( 17 )
+
+[sub_resource type="ParticlesMaterial" id=16]
+flag_disable_z = true
+direction = Vector3( 0, 1, 0 )
+spread = 0.0
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 30.0
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+linear_accel = 10.0
+linear_accel_random = 1.0
+scale_curve = SubResource( 18 )
+color_ramp = SubResource( 20 )
+
+[sub_resource type="AtlasTexture" id=53]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 0, 528, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=54]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 0, 264, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=55]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 0, 0, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=56]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 0, 660, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=57]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 0, 396, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=58]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 0, 132, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=47]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 0, 594, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=48]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 0, 330, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=49]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 0, 66, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=59]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 0, 726, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=60]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 0, 462, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=61]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 0, 198, 64, 64 )
+
+[sub_resource type="SpriteFrames" id=7]
+resource_local_to_scene = true
+animations = [ {
+"frames": [ SubResource( 53 ), SubResource( 54 ), SubResource( 55 ), SubResource( 54 ) ],
+"loop": true,
+"name": "engine_down_on",
+"speed": 4.0
+}, {
+"frames": [ SubResource( 56 ), SubResource( 57 ), SubResource( 58 ), SubResource( 57 ) ],
+"loop": true,
+"name": "engine_left_on",
+"speed": 4.0
+}, {
+"frames": [ SubResource( 47 ), SubResource( 48 ), SubResource( 49 ), SubResource( 48 ) ],
+"loop": true,
+"name": "engine_right_on",
+"speed": 4.0
+}, {
+"frames": [ SubResource( 59 ), SubResource( 60 ), SubResource( 61 ), SubResource( 60 ) ],
+"loop": true,
+"name": "engine_up_on",
+"speed": 4.0
+} ]
+
+[node name="core" type="KinematicBody2D"]
+collision_mask = 12
+script = ExtResource( 2 )
+InterfacePosition1Path = NodePath("interfaceUp")
+InterfacePosition2Path = NodePath("interfaceDown")
+InterfacePosition3Path = NodePath("interfaceLeft")
+InterfacePosition4Path = NodePath("interfaceRight")
+TestInfoPath = NodePath("TestInfo")
+engine1_on_animatePath = NodePath("engineAnim/engine_up_on")
+engine2_on_animatePath = NodePath("engineAnim/engine_down_on")
+engine3_on_animatePath = NodePath("engineAnim/engine_left_on")
+engine4_on_animatePath = NodePath("engineAnim/engine_right_on")
+engine1_pic_DamagedPath = NodePath("engineAnim/base_Damaged")
+engine1_pic_SlightDamagedPath = NodePath("engineAnim/base_SlightDamaged")
+engine1_pic_VeryDamagedPath = NodePath("engineAnim/base_VeryDamaged")
+engine_effect1Path = NodePath("engineEffect/Particles2D2")
+engine_effect2Path = NodePath("engineEffect/Particles2D")
+
+[node name="engineEffect" type="Node2D" parent="."]
+
+[node name="Particles2D2" type="Particles2D" parent="engineEffect"]
+position = Vector2( 18, 9 )
+emitting = false
+amount = 15
+lifetime = 0.5
+process_material = SubResource( 16 )
+texture = ExtResource( 3 )
+
+[node name="Particles2D" type="Particles2D" parent="engineEffect"]
+position = Vector2( -18, 9 )
+emitting = false
+amount = 15
+lifetime = 0.5
+process_material = SubResource( 16 )
+texture = ExtResource( 3 )
+
+[node name="engineAnim" type="Node2D" parent="."]
+modulate = Color( 0.854902, 0.239216, 0.239216, 1 )
+
+[node name="engine_right_off" type="Sprite" parent="engineAnim"]
+texture = ExtResource( 1 )
+vframes = 20
+frame = 13
+
+[node name="engine_left_off" type="Sprite" parent="engineAnim"]
+texture = ExtResource( 1 )
+vframes = 20
+frame = 14
+
+[node name="engine_down_off" type="Sprite" parent="engineAnim"]
+texture = ExtResource( 1 )
+vframes = 20
+frame = 12
+
+[node name="engine_up_off" type="Sprite" parent="engineAnim"]
+texture = ExtResource( 1 )
+vframes = 20
+frame = 15
+
+[node name="engine_right_on" type="AnimatedSprite" parent="engineAnim"]
+modulate = Color( 1, 1, 1, 0 )
+position = Vector2( 0, 1 )
+frames = SubResource( 7 )
+animation = "engine_right_on"
+
+[node name="engine_left_on" type="AnimatedSprite" parent="engineAnim"]
+modulate = Color( 1, 1, 1, 0 )
+position = Vector2( 0, 1 )
+frames = SubResource( 7 )
+animation = "engine_left_on"
+
+[node name="engine_down_on" type="AnimatedSprite" parent="engineAnim"]
+modulate = Color( 1, 1, 1, 0 )
+position = Vector2( 0, 1 )
+frames = SubResource( 7 )
+animation = "engine_down_on"
+frame = 1
+
+[node name="engine_up_on" type="AnimatedSprite" parent="engineAnim"]
+modulate = Color( 1, 1, 1, 0 )
+position = Vector2( 0, 1 )
+frames = SubResource( 7 )
+animation = "engine_up_on"
+frame = 1
+
+[node name="base_FullHealth" type="Sprite" parent="engineAnim"]
+texture = ExtResource( 1 )
+vframes = 20
+frame = 16
+
+[node name="base_Damaged" type="Sprite" parent="engineAnim"]
+modulate = Color( 1, 1, 1, 0 )
+texture = ExtResource( 1 )
+vframes = 20
+frame = 19
+
+[node name="base_SlightDamaged" type="Sprite" parent="engineAnim"]
+modulate = Color( 1, 1, 1, 0 )
+texture = ExtResource( 1 )
+vframes = 20
+frame = 18
+
+[node name="base_VeryDamaged" type="Sprite" parent="engineAnim"]
+modulate = Color( 1, 1, 1, 0 )
+texture = ExtResource( 1 )
+vframes = 20
+frame = 17
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PoolVector2Array( -10, -32, 10, -32, 10, -25, 15, -25, 15, -16, 21, -10, 31, -10, 31, 8, 21, 8, 15, 14, 15, 25, 9, 25, 9, 32, -10, 32, -10, 25, -14, 25, -14, 14, -21, 9, -31, 9, -31, -8, -20, -8, -14, -15, -14, -25, -10, -25 )
+
+[node name="interfaceUp" type="Node2D" parent="."]
+position = Vector2( 0, -32 )
+
+[node name="interfaceDown" type="Node2D" parent="."]
+position = Vector2( 0, 32 )
+
+[node name="interfaceLeft" type="Node2D" parent="."]
+position = Vector2( -32, 0 )
+
+[node name="interfaceRight" type="Node2D" parent="."]
+position = Vector2( 32, 0 )
+
+[node name="TestInfo" type="Label" parent="."]
+margin_left = 48.0
+margin_top = -45.0
+margin_right = 151.0
+margin_bottom = -23.0

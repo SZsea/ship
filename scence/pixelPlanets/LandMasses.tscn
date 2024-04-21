@@ -1,0 +1,102 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://shader/PlanetUnder.shader" type="Shader" id=1]
+[ext_resource path="res://shader/PlanetLandmass.shader" type="Shader" id=2]
+[ext_resource path="res://shader/Clouds.shader" type="Shader" id=3]
+[ext_resource path="res://code/mapScence/starManage/LandMasses.cs" type="Script" id=4]
+
+[sub_resource type="ShaderMaterial" id=2658]
+shader = ExtResource( 1 )
+shader_param/pixels = 1000.0
+shader_param/rotation = 0.0
+shader_param/light_origin = Vector2( 0.712, 0.396 )
+shader_param/time_speed = 0.2
+shader_param/dither_size = 2.0
+shader_param/light_border_1 = 0.4
+shader_param/light_border_2 = 0.6
+shader_param/color1 = Color( 0.572549, 0.909804, 0.752941, 1 )
+shader_param/color2 = Color( 0.309804, 0.643137, 0.721569, 1 )
+shader_param/color3 = Color( 0.172549, 0.207843, 0.301961, 1 )
+shader_param/size = 10.0
+shader_param/OCTAVES = 3
+shader_param/seed = 10.0
+shader_param/time = 200.177
+shader_param/should_dither = true
+shader_param/viewing_pos = Vector2( 0, 0 )
+shader_param/viewing_dis = 1000.0
+shader_param/rotation_center = Vector2( 0, 0 )
+shader_param/rotation_speed = 1.0
+
+[sub_resource type="ShaderMaterial" id=2691]
+shader = ExtResource( 2 )
+shader_param/pixels = 1000.0
+shader_param/rotation = 0.0
+shader_param/light_origin = Vector2( 0.712, 0.396 )
+shader_param/time_speed = 0.2
+shader_param/dither_size = 2.0
+shader_param/light_border_1 = 0.4
+shader_param/light_border_2 = 0.6
+shader_param/land_cutoff = 0.633
+shader_param/viewing_pos = Vector2( 0, 0 )
+shader_param/viewing_dis = 1000.0
+shader_param/rotation_center = Vector2( 0, 0 )
+shader_param/rotation_speed = 0.5
+shader_param/col1 = Color( 0.784314, 0.831373, 0.364706, 1 )
+shader_param/col2 = Color( 0.388235, 0.670588, 0.247059, 1 )
+shader_param/col3 = Color( 0.184314, 0.341176, 0.32549, 1 )
+shader_param/col4 = Color( 0.156863, 0.207843, 0.25098, 1 )
+shader_param/size = 4.395
+shader_param/OCTAVES = 6
+shader_param/seed = 6.847
+shader_param/time = 88.0777
+
+[sub_resource type="ShaderMaterial" id=2659]
+shader = ExtResource( 3 )
+shader_param/pixels = 1000.0
+shader_param/rotation = 0.0
+shader_param/cloud_cover = 0.415
+shader_param/light_origin = Vector2( 0.712, 0.396 )
+shader_param/time_speed = 0.2
+shader_param/stretch = 2.0
+shader_param/cloud_curve = 1.329
+shader_param/light_border_1 = 0.52
+shader_param/light_border_2 = 0.6
+shader_param/base_color = Color( 0.87451, 0.878431, 0.909804, 1 )
+shader_param/outline_color = Color( 0.639216, 0.654902, 0.760784, 1 )
+shader_param/shadow_base_color = Color( 0.407843, 0.435294, 0.6, 1 )
+shader_param/shadow_outline_color = Color( 0.25098, 0.286275, 0.45098, 1 )
+shader_param/size = 7.745
+shader_param/OCTAVES = 2
+shader_param/seed = 5.939
+shader_param/time = 77.068
+shader_param/viewing_pos = Vector2( 0, 0 )
+shader_param/viewing_dis = 1000.0
+shader_param/rotation_center = Vector2( 0, 0 )
+shader_param/rotation_speed = 1.0
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = -1920.0
+margin_bottom = -1080.0
+script = ExtResource( 4 )
+pixels = 1000.0
+run = true
+LandMassesWaterPath = NodePath("Water")
+LandMassesLandPath = NodePath("Land")
+LandMassesCloudPath = NodePath("Cloud")
+
+[node name="Water" type="ColorRect" parent="."]
+material = SubResource( 2658 )
+margin_right = 200.0
+margin_bottom = 200.0
+
+[node name="Land" type="ColorRect" parent="."]
+material = SubResource( 2691 )
+margin_right = 200.0
+margin_bottom = 200.0
+
+[node name="Cloud" type="ColorRect" parent="."]
+material = SubResource( 2659 )
+margin_right = 200.0
+margin_bottom = 200.0

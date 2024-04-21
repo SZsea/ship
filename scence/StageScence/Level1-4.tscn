@@ -1,0 +1,381 @@
+[gd_scene load_steps=35 format=2]
+
+[ext_resource path="res://code/mapScence/starManage/Galaxy.cs" type="Script" id=1]
+[ext_resource path="res://code/StageScence.cs" type="Script" id=2]
+[ext_resource path="res://shader/Galaxy.shader" type="Shader" id=3]
+[ext_resource path="res://code/mapScence/starManage/LavaWorld.cs" type="Script" id=4]
+[ext_resource path="res://shader/StarBlobs.shader" type="Shader" id=5]
+[ext_resource path="res://shader/Star.shader" type="Shader" id=6]
+[ext_resource path="res://shader/StarFlares.shader" type="Shader" id=7]
+[ext_resource path="res://code/mapScence/starManage/Star.cs" type="Script" id=8]
+[ext_resource path="res://shader/Rivers.shader" type="Shader" id=9]
+[ext_resource path="res://shader/Craters.shader" type="Shader" id=10]
+[ext_resource path="res://shader/NoAtmosphere.shader" type="Shader" id=11]
+
+[sub_resource type="StreamTexture" id=2670]
+resource_local_to_scene = true
+flags = 4
+load_path = "res://.import/Nebula Aqua-Pink.png-d497b1b2e728c55eb8710865a60815c0.stex"
+
+[sub_resource type="StreamTexture" id=2671]
+flags = 4
+load_path = "res://.import/Stars-Big_1_1_PC.png-7c820449cb4b917131e2b1b05ecccd79.stex"
+
+[sub_resource type="Gradient" id=2]
+offsets = PoolRealArray( 0, 0.2, 0.4, 0.6, 0.8, 1 )
+colors = PoolColorArray( 1, 1, 0.921569, 1, 1, 0.894118, 0.470588, 1, 0.560784, 0.870588, 0.364706, 1, 0.239216, 0.431373, 0.439216, 1, 0.196078, 0.243137, 0.309804, 1, 0.196078, 0.160784, 0.278431, 1 )
+
+[sub_resource type="GradientTexture" id=3]
+gradient = SubResource( 2 )
+
+[sub_resource type="ShaderMaterial" id=1]
+shader = ExtResource( 3 )
+shader_param/pixels = 1000.0
+shader_param/rotation = 0.429
+shader_param/time_speed = 0.2
+shader_param/dither_size = 2.0
+shader_param/should_dither = true
+shader_param/size = 8.962
+shader_param/OCTAVES = 1
+shader_param/seed = 5.881
+shader_param/time = 36300.8
+shader_param/tilt = 3.0
+shader_param/n_layers = 4.0
+shader_param/layer_height = 0.4
+shader_param/zoom = 1.375
+shader_param/n_colors = 6.0
+shader_param/swirl = -9.0
+shader_param/star_speed = 0.05
+shader_param/colorscheme = SubResource( 3 )
+
+[sub_resource type="ShaderMaterial" id=2689]
+shader = ExtResource( 11 )
+shader_param/pixels = 1000.0
+shader_param/rotation = 0.0
+shader_param/light_origin = Vector2( 0.712, 0.396 )
+shader_param/time_speed = 0.2
+shader_param/dither_size = 2.0
+shader_param/light_border_1 = 0.531
+shader_param/light_border_2 = 0.77
+shader_param/color1 = Color( 0.560784, 0.301961, 0.341176, 1 )
+shader_param/color2 = Color( 0.321569, 0.2, 0.247059, 1 )
+shader_param/color3 = Color( 0.239216, 0.160784, 0.211765, 1 )
+shader_param/size = 10.0
+shader_param/OCTAVES = 3
+shader_param/seed = 1.551
+shader_param/time = 2046.26
+shader_param/should_dither = true
+
+[sub_resource type="ShaderMaterial" id=2690]
+shader = ExtResource( 10 )
+shader_param/pixels = 1000.0
+shader_param/rotation = 0.0
+shader_param/light_origin = Vector2( 0.712, 0.396 )
+shader_param/time_speed = 0.2
+shader_param/light_border = 0.4
+shader_param/color1 = Color( 0.321569, 0.2, 0.247059, 1 )
+shader_param/color2 = Color( 0.239216, 0.160784, 0.211765, 1 )
+shader_param/size = 3.5
+shader_param/seed = 1.561
+shader_param/time = 716.19
+
+[sub_resource type="ShaderMaterial" id=2691]
+shader = ExtResource( 9 )
+shader_param/pixels = 1000.0
+shader_param/rotation = 0.0
+shader_param/light_origin = Vector2( 0.712, 0.396 )
+shader_param/time_speed = 0.2
+shader_param/light_border_1 = 0.019
+shader_param/light_border_2 = 0.036
+shader_param/river_cutoff = 0.579
+shader_param/color1 = Color( 1, 0.537255, 0.2, 1 )
+shader_param/color2 = Color( 0.901961, 0.270588, 0.223529, 1 )
+shader_param/color3 = Color( 0.678431, 0.184314, 0.270588, 1 )
+shader_param/size = 10.0
+shader_param/OCTAVES = 4
+shader_param/seed = 2.527
+shader_param/time = 2046.26
+
+[sub_resource type="ShaderMaterial" id=2684]
+shader = ExtResource( 5 )
+shader_param/pixels = 1000.0
+shader_param/color = Color( 1, 1, 1, 1 )
+shader_param/time_speed = 0.05
+shader_param/time = 4827.35
+shader_param/rotation = 0.0
+shader_param/seed = 3.075
+shader_param/circle_amount = 2.0
+shader_param/circle_size = 1.0
+shader_param/size = 4.93
+shader_param/OCTAVES = 4
+
+[sub_resource type="Gradient" id=2685]
+offsets = PoolRealArray( 0, 0.33, 0.66, 1 )
+colors = PoolColorArray( 0.960784, 1, 0.909804, 1, 0.878431, 0.647059, 0.466667, 1, 0.505882, 0.309804, 0.380392, 1, 0.14902, 0.0745098, 0.329412, 1 )
+
+[sub_resource type="GradientTexture" id=2661]
+gradient = SubResource( 2685 )
+
+[sub_resource type="ShaderMaterial" id=2686]
+shader = ExtResource( 6 )
+shader_param/pixels = 1000.0
+shader_param/time_speed = 0.05
+shader_param/time = 2193.14
+shader_param/rotation = 0.0
+shader_param/should_dither = false
+shader_param/seed = 4.837
+shader_param/size = 4.463
+shader_param/OCTAVES = 4
+shader_param/TILES = 1.0
+shader_param/colorramp = SubResource( 2661 )
+
+[sub_resource type="Gradient" id=2687]
+colors = PoolColorArray( 0.878431, 0.647059, 0.466667, 1, 0.960784, 1, 0.909804, 1 )
+
+[sub_resource type="GradientTexture" id=2678]
+gradient = SubResource( 2687 )
+
+[sub_resource type="ShaderMaterial" id=2688]
+shader = ExtResource( 7 )
+shader_param/pixels = 1000.0
+shader_param/time_speed = 0.05
+shader_param/time = 2352.41
+shader_param/rotation = 0.0
+shader_param/should_dither = false
+shader_param/storm_width = 0.3
+shader_param/storm_dither_width = 0.0
+shader_param/scale = 1.0
+shader_param/seed = 5.129
+shader_param/circle_amount = 2.0
+shader_param/circle_scale = 1.0
+shader_param/size = 1.6
+shader_param/OCTAVES = 4
+shader_param/colorramp = SubResource( 2678 )
+
+[sub_resource type="ShaderMaterial" id=2660]
+shader = ExtResource( 5 )
+shader_param/pixels = 1000.0
+shader_param/color = Color( 1, 1, 1, 1 )
+shader_param/time_speed = 0.05
+shader_param/time = 2024.91
+shader_param/rotation = 0.0
+shader_param/seed = 3.075
+shader_param/circle_amount = 2.0
+shader_param/circle_size = 1.0
+shader_param/size = 4.93
+shader_param/OCTAVES = 4
+
+[sub_resource type="Gradient" id=2692]
+offsets = PoolRealArray( 0, 0.33, 0.66, 1 )
+colors = PoolColorArray( 0.960784, 1, 0.909804, 1, 1, 0.847059, 0.196078, 1, 1, 0.509804, 0.231373, 1, 0.486275, 0.0980392, 0.101961, 1 )
+
+[sub_resource type="GradientTexture" id=2693]
+gradient = SubResource( 2692 )
+
+[sub_resource type="ShaderMaterial" id=2677]
+shader = ExtResource( 6 )
+shader_param/pixels = 1000.0
+shader_param/time_speed = 0.05
+shader_param/time = 919.945
+shader_param/rotation = 0.0
+shader_param/should_dither = false
+shader_param/seed = 4.837
+shader_param/size = 4.463
+shader_param/OCTAVES = 4
+shader_param/TILES = 1.0
+shader_param/colorramp = SubResource( 2693 )
+
+[sub_resource type="Gradient" id=2694]
+colors = PoolColorArray( 1, 0.847059, 0.196078, 1, 0.960784, 1, 0.909804, 1 )
+
+[sub_resource type="GradientTexture" id=2695]
+gradient = SubResource( 2694 )
+
+[sub_resource type="ShaderMaterial" id=2679]
+shader = ExtResource( 7 )
+shader_param/pixels = 1000.0
+shader_param/time_speed = 0.05
+shader_param/time = 986.756
+shader_param/rotation = 0.0
+shader_param/should_dither = false
+shader_param/storm_width = 0.3
+shader_param/storm_dither_width = 0.0
+shader_param/scale = 1.0
+shader_param/seed = 5.129
+shader_param/circle_amount = 2.0
+shader_param/circle_scale = 1.0
+shader_param/size = 1.6
+shader_param/OCTAVES = 4
+shader_param/colorramp = SubResource( 2695 )
+
+[sub_resource type="RectangleShape2D" id=2669]
+extents = Vector2( 4000, 4000 )
+
+[node name="StageScence" type="Node2D"]
+script = ExtResource( 2 )
+fightAreaPath = NodePath("Area2D")
+fightAreaInPath = NodePath("Area2D/CollisionShape2D")
+
+[node name="stageBG" type="ParallaxBackground" parent="."]
+
+[node name="bg1" type="ParallaxLayer" parent="stageBG"]
+motion_scale = Vector2( 0.01, 0.01 )
+
+[node name="TextureRect2" type="TextureRect" parent="stageBG/bg1"]
+margin_left = -6000.0
+margin_top = -6000.0
+margin_right = 6000.0
+margin_bottom = 6000.0
+texture = SubResource( 2670 )
+stretch_mode = 2
+
+[node name="bg2" type="ParallaxLayer" parent="stageBG"]
+motion_scale = Vector2( 0.02, 0.02 )
+
+[node name="TextureRect" type="TextureRect" parent="stageBG/bg2"]
+margin_left = -6000.0
+margin_top = -6000.0
+margin_right = 6000.0
+margin_bottom = 6000.0
+texture = SubResource( 2671 )
+stretch_mode = 2
+
+[node name="planet4" type="ParallaxLayer" parent="stageBG"]
+motion_scale = Vector2( 0.08, 0.08 )
+
+[node name="Control" type="Control" parent="stageBG/planet4"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 172.0
+margin_top = -864.0
+margin_right = 172.0
+margin_bottom = -864.0
+script = ExtResource( 1 )
+pixels = 1000.0
+planetSize = Vector2( 50, 50 )
+run = true
+GalaxyPath = NodePath("Galaxy")
+
+[node name="Galaxy" type="ColorRect" parent="stageBG/planet4/Control"]
+material = SubResource( 1 )
+margin_top = 1.0
+margin_right = 50.0
+margin_bottom = 51.0
+
+[node name="planet3" type="ParallaxLayer" parent="stageBG"]
+motion_scale = Vector2( 0.1, 0.1 )
+
+[node name="planet2" type="ParallaxLayer" parent="stageBG"]
+motion_scale = Vector2( 0.2, 0.2 )
+
+[node name="Control" type="Control" parent="stageBG/planet2"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -70.0
+margin_top = -56.0
+margin_right = -70.0
+margin_bottom = -56.0
+rect_pivot_offset = Vector2( 0, 15 )
+script = ExtResource( 4 )
+pixels = 1000.0
+planetSize = Vector2( 25, 25 )
+LavaWorldColors = PoolColorArray( 0.113725, 0.2, 0.207843, 1, 0.0745098, 0.113725, 0.137255, 1, 0.0392157, 0.0470588, 0.0705882, 1, 0.0745098, 0.113725, 0.137255, 1, 0.0392157, 0.0470588, 0.0705882, 1, 0.513726, 0.635294, 0.772549, 1, 0.345098, 0.352941, 0.513726, 1, 0.2, 0.172549, 0.258824, 1 )
+lightpoint = Vector2( 0.5, 0.5 )
+run = true
+LavaWorldPlanetUnderPath = NodePath("PlanetUnder")
+LavaWorldCratersPath = NodePath("Craters")
+LavaWorldLavaRiversPath = NodePath("LavaRivers")
+
+[node name="PlanetUnder" type="ColorRect" parent="stageBG/planet2/Control"]
+material = SubResource( 2689 )
+margin_right = 25.0
+margin_bottom = 25.0
+
+[node name="Craters" type="ColorRect" parent="stageBG/planet2/Control"]
+material = SubResource( 2690 )
+margin_right = 25.0
+margin_bottom = 25.0
+
+[node name="LavaRivers" type="ColorRect" parent="stageBG/planet2/Control"]
+material = SubResource( 2691 )
+margin_right = 25.0
+margin_bottom = 25.0
+
+[node name="star" type="ParallaxLayer" parent="stageBG"]
+motion_scale = Vector2( 0.5, 0.5 )
+
+[node name="star" type="Control" parent="stageBG/star"]
+margin_left = 451.0
+margin_top = -547.0
+margin_right = 491.0
+margin_bottom = -507.0
+script = ExtResource( 8 )
+pixels = 1000.0
+planetDither = false
+gradientColor1 = PoolColorArray( 0.960784, 1, 0.909804, 1, 0.878431, 0.647059, 0.466667, 1, 0.505882, 0.309804, 0.380392, 1, 0.14902, 0.0745098, 0.329412, 1 )
+run = true
+StarBackgroundPath = NodePath("StarBackground")
+StarPath = NodePath("Star")
+StarFlaresPath = NodePath("StarFlares")
+
+[node name="StarBackground" type="ColorRect" parent="stageBG/star/star"]
+material = SubResource( 2684 )
+margin_left = -100.0
+margin_top = -100.0
+margin_right = 300.0
+margin_bottom = 300.0
+
+[node name="Star" type="ColorRect" parent="stageBG/star/star"]
+material = SubResource( 2686 )
+margin_right = 200.0
+margin_bottom = 200.0
+
+[node name="StarFlares" type="ColorRect" parent="stageBG/star/star"]
+material = SubResource( 2688 )
+margin_left = -100.0
+margin_top = -100.0
+margin_right = 300.0
+margin_bottom = 300.0
+
+[node name="planet" type="ParallaxLayer" parent="stageBG"]
+motion_scale = Vector2( 0.6, 0.6 )
+
+[node name="star" type="Control" parent="stageBG/planet"]
+margin_left = -857.0
+margin_top = 402.0
+margin_right = -817.0
+margin_bottom = 442.0
+script = ExtResource( 8 )
+pixels = 1000.0
+planetSize = Vector2( 350, 350 )
+planetDither = false
+gradientColor2 = PoolColorArray( 0.960784, 1, 0.909804, 1, 0.458824, 0.447059, 0.984314, 1, 0.380392, 0.243137, 0.694118, 1, 0.345098, 0.105882, 0.32549, 1 )
+starKind = false
+run = true
+StarBackgroundPath = NodePath("StarBackground")
+StarPath = NodePath("Star")
+StarFlaresPath = NodePath("StarFlares")
+
+[node name="StarBackground" type="ColorRect" parent="stageBG/planet/star"]
+material = SubResource( 2660 )
+margin_left = -175.0
+margin_top = -175.0
+margin_right = 525.0
+margin_bottom = 525.0
+
+[node name="Star" type="ColorRect" parent="stageBG/planet/star"]
+material = SubResource( 2677 )
+margin_right = 350.0
+margin_bottom = 350.0
+
+[node name="StarFlares" type="ColorRect" parent="stageBG/planet/star"]
+material = SubResource( 2679 )
+margin_left = -175.0
+margin_top = -175.0
+margin_right = 525.0
+margin_bottom = 525.0
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource( 2669 )

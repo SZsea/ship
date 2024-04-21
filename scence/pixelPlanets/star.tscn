@@ -1,0 +1,92 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://shader/StarBlobs.shader" type="Shader" id=1]
+[ext_resource path="res://shader/StarFlares.shader" type="Shader" id=2]
+[ext_resource path="res://shader/Star.shader" type="Shader" id=3]
+[ext_resource path="res://code/mapScence/starManage/Star.cs" type="Script" id=4]
+
+[sub_resource type="ShaderMaterial" id=2660]
+shader = ExtResource( 1 )
+shader_param/pixels = 1000.0
+shader_param/color = Color( 1, 1, 1, 1 )
+shader_param/time_speed = 0.05
+shader_param/time = 2607.9
+shader_param/rotation = 0.0
+shader_param/seed = 3.075
+shader_param/circle_amount = 2.0
+shader_param/circle_size = 1.0
+shader_param/size = 4.93
+shader_param/OCTAVES = 4
+
+[sub_resource type="Gradient" id=2696]
+offsets = PoolRealArray( 0, 0.33, 0.66, 1 )
+colors = PoolColorArray( 0.960784, 1, 0.909804, 1, 1, 0.847059, 0.196078, 1, 1, 0.509804, 0.231373, 1, 0.486275, 0.0980392, 0.101961, 1 )
+
+[sub_resource type="GradientTexture" id=2693]
+gradient = SubResource( 2696 )
+
+[sub_resource type="ShaderMaterial" id=2677]
+shader = ExtResource( 3 )
+shader_param/pixels = 1000.0
+shader_param/time_speed = 0.05
+shader_param/time = 1184.81
+shader_param/rotation = 0.0
+shader_param/should_dither = true
+shader_param/seed = 4.837
+shader_param/size = 4.463
+shader_param/OCTAVES = 4
+shader_param/TILES = 1.0
+shader_param/colorramp = SubResource( 2693 )
+
+[sub_resource type="Gradient" id=2697]
+colors = PoolColorArray( 1, 0.847059, 0.196078, 1, 0.960784, 1, 0.909804, 1 )
+
+[sub_resource type="GradientTexture" id=2695]
+gradient = SubResource( 2697 )
+
+[sub_resource type="ShaderMaterial" id=2679]
+shader = ExtResource( 2 )
+shader_param/pixels = 1000.0
+shader_param/time_speed = 0.05
+shader_param/time = 1270.86
+shader_param/rotation = 0.0
+shader_param/should_dither = true
+shader_param/storm_width = 0.3
+shader_param/storm_dither_width = 0.0
+shader_param/scale = 1.0
+shader_param/seed = 5.129
+shader_param/circle_amount = 2.0
+shader_param/circle_scale = 1.0
+shader_param/size = 1.6
+shader_param/OCTAVES = 4
+shader_param/colorramp = SubResource( 2695 )
+
+[node name="star" type="Control"]
+margin_right = 40.0
+margin_bottom = 40.0
+script = ExtResource( 4 )
+pixels = 1000.0
+planetDither = false
+run = true
+StarBackgroundPath = NodePath("StarBackground")
+StarPath = NodePath("Star")
+StarFlaresPath = NodePath("StarFlares")
+
+[node name="StarBackground" type="ColorRect" parent="."]
+material = SubResource( 2660 )
+margin_left = -100.0
+margin_top = -100.0
+margin_right = 300.0
+margin_bottom = 300.0
+
+[node name="Star" type="ColorRect" parent="."]
+material = SubResource( 2677 )
+margin_right = 200.0
+margin_bottom = 200.0
+
+[node name="StarFlares" type="ColorRect" parent="."]
+material = SubResource( 2679 )
+margin_left = -100.0
+margin_top = -100.0
+margin_right = 300.0
+margin_bottom = 300.0

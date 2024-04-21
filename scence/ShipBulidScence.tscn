@@ -1,0 +1,109 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://code/ShipBulidScence.cs" type="Script" id=1]
+[ext_resource path="res://scence/UI/GameMainBg.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scence/UI/BulidUILayer.tscn" type="PackedScene" id=4]
+[ext_resource path="res://code/bulidScence/bulidScenceScroll.cs" type="Script" id=5]
+[ext_resource path="res://scence/UI/BulidUI_shopping.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scence/UI/CustomNotifyPanel.tscn" type="PackedScene" id=7]
+[ext_resource path="res://art/font/BoutiqueBitmap9x9_1.9.ttf" type="DynamicFontData" id=8]
+
+[sub_resource type="DynamicFont" id=2]
+resource_local_to_scene = true
+size = 50
+font_data = ExtResource( 8 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 50
+font_data = ExtResource( 8 )
+
+[sub_resource type="DynamicFont" id=1]
+size = 50
+font_data = ExtResource( 8 )
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource( 1 )
+CameraPath = NodePath("Camera2D")
+PlayerBodyNodePath = NodePath("PlayerBodyNode")
+PlayerBodyNodeAreaPath = NodePath("PlayerBodyNodeArea")
+StartButtonPath = NodePath("startButton")
+ScrollContainerPath = NodePath("ScrollContainer")
+BuildUILayerPath = NodePath("GameUILayer")
+ShoppingButtonPath = NodePath("Button")
+ShoppingUIPanelPath = NodePath("Node2D")
+DeleteAreaPanelPath = NodePath("deleteArea")
+VisibileNodePath = NodePath("Node2D/VisibleNode")
+bgPath = NodePath("bg")
+deletePath = NodePath("deleteArea/Label")
+
+[node name="bg" parent="." instance=ExtResource( 2 )]
+
+[node name="Button" type="Button" parent="."]
+margin_left = -477.0
+margin_top = -519.0
+margin_right = -272.0
+margin_bottom = -426.0
+custom_fonts/font = SubResource( 2 )
+text = "商店"
+
+[node name="deleteArea" type="Control" parent="."]
+margin_left = 437.0
+margin_top = 398.0
+margin_right = 959.0
+margin_bottom = 543.0
+
+[node name="Panel" type="Panel" parent="deleteArea"]
+margin_right = 521.0
+margin_bottom = 144.0
+
+[node name="Label" type="Label" parent="deleteArea"]
+margin_right = 522.0
+margin_bottom = 145.0
+custom_colors/font_color = Color( 1, 0.384314, 0.384314, 1 )
+custom_fonts/font = SubResource( 3 )
+text = "部件回收"
+align = 1
+valign = 1
+
+[node name="startButton" type="Button" parent="."]
+margin_left = -223.0
+margin_top = 403.0
+margin_right = 219.0
+margin_bottom = 522.0
+custom_fonts/font = SubResource( 1 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="PlayerBodyNodeArea" type="Control" parent="."]
+margin_left = -545.0
+margin_top = -458.0
+margin_right = 354.0
+margin_bottom = 394.0
+input_pass_on_modal_close_click = false
+
+[node name="PlayerBodyNode" type="Node2D" parent="."]
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+margin_left = 370.0
+margin_top = -537.0
+margin_right = 870.0
+margin_bottom = 363.0
+follow_focus = true
+scroll_horizontal_enabled = false
+script = ExtResource( 5 )
+GridContainerPath = NodePath("GridContainer")
+
+[node name="GridContainer" type="GridContainer" parent="ScrollContainer"]
+columns = 5
+
+[node name="GameUILayer" parent="." instance=ExtResource( 4 )]
+
+[node name="Node2D" parent="." instance=ExtResource( 6 )]
+
+[node name="VisibleNode" parent="Node2D" instance=ExtResource( 7 )]
+margin_left = 741.0
+margin_top = 277.0
+margin_right = 741.0
+margin_bottom = 277.0
+
+[connection signal="pressed" from="startButton" to="." method="_on_startButton_pressed"]

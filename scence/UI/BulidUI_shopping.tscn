@@ -1,0 +1,96 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://scence/UI/BulidUI_ShoppingPanel.tscn" type="PackedScene" id=1]
+[ext_resource path="res://code/bulidScence/BulidUI_shopping.cs" type="Script" id=2]
+[ext_resource path="res://art/font/BoutiqueBitmap9x9_1.9.ttf" type="DynamicFontData" id=4]
+
+[sub_resource type="DynamicFont" id=3]
+size = 30
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 30
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=1]
+font_data = ExtResource( 4 )
+
+[node name="CanvasLayer" type="CanvasLayer"]
+script = ExtResource( 2 )
+closeButtonPath = NodePath("Node2D/CloseButton")
+refreshButtonPath = NodePath("Node2D/RefreshButton")
+panelPart1Path = NodePath("Node2D/ColorRect")
+panelPart2Path = NodePath("Node2D/ColorRect2")
+panelPart3Path = NodePath("Node2D/ColorRect3")
+panelPart4Path = NodePath("Node2D/ColorRect4")
+pirceNotePath = NodePath("Node2D/Label")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 0.998
+color = Color( 0, 0, 0, 0.0823529 )
+
+[node name="Node2D" type="Panel" parent="."]
+anchor_right = 1.0
+margin_left = 361.0
+margin_top = 188.0
+margin_right = -457.0
+margin_bottom = 737.0
+
+[node name="ColorRect7" type="ColorRect" parent="Node2D"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.176471, 0.317647, 0.34902, 1 )
+
+[node name="CloseButton" type="Button" parent="Node2D"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -162.0
+margin_top = 27.0
+margin_right = -20.0
+margin_bottom = 101.0
+rect_pivot_offset = Vector2( 71, 74 )
+custom_fonts/font = SubResource( 3 )
+text = "关闭"
+
+[node name="RefreshButton" type="Button" parent="Node2D"]
+margin_left = 464.0
+margin_top = 438.0
+margin_right = 606.0
+margin_bottom = 512.0
+rect_pivot_offset = Vector2( 71, 74 )
+custom_fonts/font = SubResource( 2 )
+text = "刷新"
+
+[node name="Label" type="Label" parent="Node2D"]
+margin_left = 486.0
+margin_top = 515.0
+margin_right = 590.0
+margin_bottom = 535.0
+custom_fonts/font = SubResource( 1 )
+text = "111111 gold"
+align = 1
+
+[node name="ColorRect" parent="Node2D" instance=ExtResource( 1 )]
+margin_left = 22.0
+margin_top = 172.0
+margin_right = 251.0
+margin_bottom = 368.0
+
+[node name="ColorRect2" parent="Node2D" instance=ExtResource( 1 )]
+margin_left = 297.0
+margin_top = 173.0
+margin_right = 526.0
+margin_bottom = 369.0
+
+[node name="ColorRect3" parent="Node2D" instance=ExtResource( 1 )]
+margin_left = 578.0
+margin_top = 173.0
+margin_right = 807.0
+margin_bottom = 369.0
+
+[node name="ColorRect4" parent="Node2D" instance=ExtResource( 1 )]
+margin_left = 861.0
+margin_top = 173.0
+margin_right = 1090.0
+margin_bottom = 369.0

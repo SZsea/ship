@@ -1,0 +1,299 @@
+[gd_scene load_steps=25 format=2]
+
+[ext_resource path="res://code/mapScence/starManage/BlackHole.cs" type="Script" id=1]
+[ext_resource path="res://code/StageScence.cs" type="Script" id=2]
+[ext_resource path="res://shader/BlackHoleRing.shader" type="Shader" id=3]
+[ext_resource path="res://shader/BlackHole.shader" type="Shader" id=4]
+[ext_resource path="res://shader/PlanetLandmass.shader" type="Shader" id=5]
+[ext_resource path="res://shader/PlanetUnder.shader" type="Shader" id=6]
+[ext_resource path="res://code/mapScence/starManage/GasPlanet.cs" type="Script" id=7]
+[ext_resource path="res://shader/GasPlanet.shader" type="Shader" id=8]
+[ext_resource path="res://shader/Clouds.shader" type="Shader" id=13]
+[ext_resource path="res://code/mapScence/starManage/LandMasses.cs" type="Script" id=15]
+
+[sub_resource type="StreamTexture" id=2685]
+flags = 4
+load_path = "res://.import/Nebula Red.png-e3bfc75cb814ca79e3f021d0dbe33240.stex"
+
+[sub_resource type="StreamTexture" id=2686]
+flags = 4
+load_path = "res://.import/Stars-Big_1_2_PC.png-8d6515e8c1eed636348798ecc3f5762a.stex"
+
+[sub_resource type="ShaderMaterial" id=2658]
+shader = ExtResource( 6 )
+shader_param/pixels = 1000.0
+shader_param/rotation = 0.0
+shader_param/light_origin = Vector2( 0.712, 0.396 )
+shader_param/time_speed = 0.2
+shader_param/dither_size = 2.0
+shader_param/light_border_1 = 0.4
+shader_param/light_border_2 = 0.6
+shader_param/color1 = Color( 0.572549, 0.909804, 0.752941, 1 )
+shader_param/color2 = Color( 0.309804, 0.643137, 0.721569, 1 )
+shader_param/color3 = Color( 0.172549, 0.207843, 0.301961, 1 )
+shader_param/size = 10.0
+shader_param/OCTAVES = 3
+shader_param/seed = 10.0
+shader_param/time = 217.124
+shader_param/should_dither = true
+shader_param/viewing_pos = Vector2( 0, 0 )
+shader_param/viewing_dis = 1000.0
+shader_param/rotation_center = Vector2( 0, 0 )
+shader_param/rotation_speed = 1.0
+
+[sub_resource type="ShaderMaterial" id=2691]
+shader = ExtResource( 5 )
+shader_param/pixels = 1000.0
+shader_param/rotation = 0.0
+shader_param/light_origin = Vector2( 0.712, 0.396 )
+shader_param/time_speed = 0.2
+shader_param/dither_size = 2.0
+shader_param/light_border_1 = 0.4
+shader_param/light_border_2 = 0.6
+shader_param/land_cutoff = 0.633
+shader_param/viewing_pos = Vector2( 0, 0 )
+shader_param/viewing_dis = 1000.0
+shader_param/rotation_center = Vector2( 0, 0 )
+shader_param/rotation_speed = 0.5
+shader_param/col1 = Color( 0.784314, 0.831373, 0.364706, 1 )
+shader_param/col2 = Color( 0.388235, 0.670588, 0.247059, 1 )
+shader_param/col3 = Color( 0.184314, 0.341176, 0.32549, 1 )
+shader_param/col4 = Color( 0.156863, 0.207843, 0.25098, 1 )
+shader_param/size = 4.395
+shader_param/OCTAVES = 6
+shader_param/seed = 6.847
+shader_param/time = 95.5345
+
+[sub_resource type="ShaderMaterial" id=2659]
+shader = ExtResource( 13 )
+shader_param/pixels = 1000.0
+shader_param/rotation = 0.0
+shader_param/cloud_cover = 0.415
+shader_param/light_origin = Vector2( 0.712, 0.396 )
+shader_param/time_speed = 0.2
+shader_param/stretch = 2.0
+shader_param/cloud_curve = 1.329
+shader_param/light_border_1 = 0.52
+shader_param/light_border_2 = 0.6
+shader_param/base_color = Color( 0.87451, 0.878431, 0.909804, 1 )
+shader_param/outline_color = Color( 0.639216, 0.654902, 0.760784, 1 )
+shader_param/shadow_base_color = Color( 0.407843, 0.435294, 0.6, 1 )
+shader_param/shadow_outline_color = Color( 0.25098, 0.286275, 0.45098, 1 )
+shader_param/size = 7.745
+shader_param/OCTAVES = 2
+shader_param/seed = 5.939
+shader_param/time = 83.5927
+shader_param/viewing_pos = Vector2( 0, 0 )
+shader_param/viewing_dis = 1000.0
+shader_param/rotation_center = Vector2( 0, 0 )
+shader_param/rotation_speed = 1.0
+
+[sub_resource type="Gradient" id=2687]
+colors = PoolColorArray( 0.133333, 0.133333, 0.180392, 1, 0.776471, 0.776471, 0.776471, 1 )
+
+[sub_resource type="GradientTexture" id=2]
+gradient = SubResource( 2687 )
+
+[sub_resource type="ShaderMaterial" id=2688]
+shader = ExtResource( 4 )
+shader_param/pixels = 1000.0
+shader_param/black_color = Color( 0, 0, 0, 1 )
+shader_param/radius = 0.267
+shader_param/light_width = 0.028
+shader_param/colorscheme = SubResource( 2 )
+
+[sub_resource type="Gradient" id=2689]
+offsets = PoolRealArray( 0, 0.25, 0.5, 0.75, 1 )
+colors = PoolColorArray( 0.901961, 0.992157, 0.992157, 1, 0.643137, 0.8, 0.780392, 1, 0.380392, 0.47451, 0.443137, 1, 0.188235, 0.180392, 0.176471, 1, 0.0862745, 0.027451, 0.0823529, 1 )
+
+[sub_resource type="GradientTexture" id=6]
+gradient = SubResource( 2689 )
+
+[sub_resource type="ShaderMaterial" id=2690]
+shader = ExtResource( 3 )
+shader_param/pixels = 3000.0
+shader_param/rotation = 0.314
+shader_param/light_origin = Vector2( 0.39, 0.39 )
+shader_param/time_speed = 0.039
+shader_param/disk_width = 0.029
+shader_param/ring_perspective = 14.0
+shader_param/should_dither = true
+shader_param/size = 50.0
+shader_param/OCTAVES = 3
+shader_param/seed = 4.109
+shader_param/time = 1364.19
+shader_param/colorscheme = SubResource( 6 )
+
+[sub_resource type="ShaderMaterial" id=2681]
+shader = ExtResource( 8 )
+shader_param/pixels = 1000.0
+shader_param/cloud_cover = null
+shader_param/light_origin = Vector2( 1.4, 0.396 )
+shader_param/time_speed = 0.7
+shader_param/stretch = 1.0
+shader_param/cloud_curve = 1.3
+shader_param/light_border_1 = 0.692
+shader_param/light_border_2 = 0.666
+shader_param/rotation = 0.0
+shader_param/base_color = Color( 0.231373, 0.12549, 0.152941, 1 )
+shader_param/outline_color = Color( 0.231373, 0.12549, 0.152941, 1 )
+shader_param/shadow_base_color = Color( 0.129412, 0.0941176, 0.105882, 1 )
+shader_param/shadow_outline_color = Color( 0.129412, 0.0941176, 0.105882, 1 )
+shader_param/size = 9.0
+shader_param/OCTAVES = 5
+shader_param/seed = 5.939
+shader_param/time = 141.131
+
+[sub_resource type="ShaderMaterial" id=2682]
+shader = ExtResource( 8 )
+shader_param/pixels = 1000.0
+shader_param/cloud_cover = 0.538
+shader_param/light_origin = Vector2( 1.4, 0.396 )
+shader_param/time_speed = 0.47
+shader_param/stretch = 1.0
+shader_param/cloud_curve = 1.3
+shader_param/light_border_1 = 0.439
+shader_param/light_border_2 = 0.746
+shader_param/rotation = 0.0
+shader_param/base_color = Color( 0.941176, 0.709804, 0.254902, 1 )
+shader_param/outline_color = Color( 0.811765, 0.458824, 0.168627, 1 )
+shader_param/shadow_base_color = Color( 0.670588, 0.317647, 0.188235, 1 )
+shader_param/shadow_outline_color = Color( 0.490196, 0.219608, 0.2, 1 )
+shader_param/size = 9.0
+shader_param/OCTAVES = 5
+shader_param/seed = 5.939
+shader_param/time = 206.268
+
+[sub_resource type="RectangleShape2D" id=2684]
+extents = Vector2( 4000, 4000 )
+
+[node name="StageScence" type="Node2D"]
+script = ExtResource( 2 )
+fightAreaPath = NodePath("Area2D")
+fightAreaInPath = NodePath("Area2D/CollisionShape2D")
+
+[node name="stageBG" type="ParallaxBackground" parent="."]
+
+[node name="bg1" type="ParallaxLayer" parent="stageBG"]
+motion_scale = Vector2( 0.01, 0.01 )
+
+[node name="TextureRect" type="TextureRect" parent="stageBG/bg1"]
+margin_left = -6000.0
+margin_top = -6000.0
+margin_right = 6000.0
+margin_bottom = 6000.0
+texture = SubResource( 2685 )
+stretch_mode = 2
+
+[node name="bg2" type="ParallaxLayer" parent="stageBG"]
+motion_scale = Vector2( 0.02, 0.02 )
+
+[node name="TextureRect" type="TextureRect" parent="stageBG/bg2"]
+margin_left = -6000.0
+margin_top = -6000.0
+margin_right = 6000.0
+margin_bottom = 6000.0
+texture = SubResource( 2686 )
+stretch_mode = 2
+
+[node name="planet4" type="ParallaxLayer" parent="stageBG"]
+motion_scale = Vector2( 0.08, 0.08 )
+
+[node name="planet3" type="ParallaxLayer" parent="stageBG"]
+motion_scale = Vector2( 0.1, 0.1 )
+
+[node name="planet2" type="ParallaxLayer" parent="stageBG"]
+motion_scale = Vector2( 0.2, 0.2 )
+
+[node name="Control" type="Control" parent="stageBG/planet2"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -385.0
+margin_top = 85.0
+margin_right = -385.0
+margin_bottom = 85.0
+script = ExtResource( 15 )
+pixels = 1000.0
+planetSize = Vector2( 25, 25 )
+run = true
+LandMassesWaterPath = NodePath("Water")
+LandMassesLandPath = NodePath("Land")
+LandMassesCloudPath = NodePath("Cloud")
+
+[node name="Water" type="ColorRect" parent="stageBG/planet2/Control"]
+material = SubResource( 2658 )
+margin_right = 25.0
+margin_bottom = 25.0
+
+[node name="Land" type="ColorRect" parent="stageBG/planet2/Control"]
+material = SubResource( 2691 )
+margin_right = 25.0
+margin_bottom = 25.0
+
+[node name="Cloud" type="ColorRect" parent="stageBG/planet2/Control"]
+material = SubResource( 2659 )
+margin_right = 25.0
+margin_bottom = 25.0
+
+[node name="star" type="ParallaxLayer" parent="stageBG"]
+motion_scale = Vector2( 0.5, 0.5 )
+
+[node name="Control" type="Control" parent="stageBG/star"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -644.0
+margin_top = -729.0
+margin_right = -644.0
+margin_bottom = -729.0
+script = ExtResource( 1 )
+pixels = 1000.0
+planetSize = Vector2( 1500, 1500 )
+run = true
+BlackHolePath = NodePath("BlackHole")
+DiskPath = NodePath("Disk")
+lightpoint = Vector2( 0, 0 )
+
+[node name="BlackHole" type="ColorRect" parent="stageBG/star/Control"]
+material = SubResource( 2688 )
+margin_right = 1500.0
+margin_bottom = 1500.0
+
+[node name="Disk" type="ColorRect" parent="stageBG/star/Control"]
+material = SubResource( 2690 )
+margin_left = -1500.0
+margin_top = -1500.0
+margin_right = 3000.0
+margin_bottom = 3000.0
+
+[node name="planet" type="ParallaxLayer" parent="stageBG"]
+motion_scale = Vector2( 0.6, 0.6 )
+
+[node name="Control" type="Control" parent="stageBG/planet"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -321.0
+margin_top = 24.0
+margin_right = -321.0
+margin_bottom = 24.0
+script = ExtResource( 7 )
+pixels = 1000.0
+planetSize = Vector2( 100, 100 )
+run = true
+CloudPath = NodePath("Cloud")
+Cloud2Path = NodePath("Cloud2")
+lightpoint = Vector2( 1.4, 0.396 )
+
+[node name="Cloud" type="ColorRect" parent="stageBG/planet/Control"]
+material = SubResource( 2681 )
+margin_right = 100.0
+margin_bottom = 100.0
+
+[node name="Cloud2" type="ColorRect" parent="stageBG/planet/Control"]
+material = SubResource( 2682 )
+margin_right = 100.0
+margin_bottom = 100.0
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource( 2684 )

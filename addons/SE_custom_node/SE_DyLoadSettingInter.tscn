@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://addons/SE_custom_node/SE_DyLoadSetting_Button.cs" type="Script" id=1]
+
+[node name="Node2D" type="Control"]
+
+[node name="SE_DyLoadSetting_Button" type="Button" parent="."]
+margin_left = 8.0
+margin_top = 8.0
+margin_right = 98.0
+margin_bottom = 42.0
+text = "export"
+clip_text = true
+script = ExtResource( 1 )

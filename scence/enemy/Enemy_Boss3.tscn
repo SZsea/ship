@@ -1,0 +1,240 @@
+[gd_scene load_steps=27 format=2]
+
+[ext_resource path="res://code/Enemy/Enemy_normal.cs" type="Script" id=1]
+[ext_resource path="res://art/enemy/enemyShip_boss3.png" type="Texture" id=2]
+
+[sub_resource type="AtlasTexture" id=84]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 256, 128, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=85]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 0, 192, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=86]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 64, 192, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=87]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 128, 192, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=88]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 192, 192, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=89]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 256, 192, 64, 64 )
+
+[sub_resource type="SpriteFrames" id=38]
+resource_local_to_scene = true
+animations = [ {
+"frames": [ SubResource( 84 ), SubResource( 85 ), SubResource( 86 ), SubResource( 87 ), SubResource( 88 ), SubResource( 89 ) ],
+"loop": true,
+"name": "fire",
+"speed": 8.0
+} ]
+
+[sub_resource type="StreamTexture" id=70]
+resource_local_to_scene = true
+flags = 4
+load_path = "res://.import/enemyShip_boss3.png-efa0a4b6e4ef9c0a12f9db696842061c.stex"
+
+[sub_resource type="AtlasTexture" id=71]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 64, 64, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=72]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 128, 64, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=73]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 192, 64, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=74]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 256, 64, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=75]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 0, 128, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=76]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 64, 128, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=77]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 128, 128, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=78]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 192, 128, 64, 64 )
+
+[sub_resource type="SpriteFrames" id=52]
+resource_local_to_scene = true
+animations = [ {
+"frames": [ SubResource( 71 ), SubResource( 72 ), SubResource( 73 ), SubResource( 74 ), SubResource( 75 ), SubResource( 76 ), SubResource( 77 ), SubResource( 78 ) ],
+"loop": false,
+"name": "destroy",
+"speed": 8.0
+} ]
+
+[sub_resource type="AtlasTexture" id=79]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 64, 0, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=80]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 128, 0, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=81]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 192, 0, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=82]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 256, 0, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=83]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 0, 64, 64, 64 )
+
+[sub_resource type="SpriteFrames" id=53]
+resource_local_to_scene = true
+animations = [ {
+"frames": [ SubResource( 79 ), SubResource( 80 ), SubResource( 81 ), SubResource( 82 ), SubResource( 83 ) ],
+"loop": true,
+"name": "attack",
+"speed": 10.0
+} ]
+
+[sub_resource type="Animation" id=39]
+resource_name = "weakup"
+tracks/0/type = "value"
+tracks/0/path = NodePath("body/body:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0.1, 0.1 ), Vector2( 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("body/fire:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0.1, 0.1 ), Vector2( 1, 1 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("CollisionPolygon2D:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0.1, 0.1 ), Vector2( 1, 1 ) ]
+}
+
+[node name="enemy_Boss3" type="KinematicBody2D"]
+scale = Vector2( 2, 2 )
+collision_layer = 4
+collision_mask = 7
+script = ExtResource( 1 )
+CollisionPolygon2DPath = NodePath("CollisionPolygon2D")
+EngineFirePath = NodePath("body/fire/engineFire")
+BodyPath = NodePath("body/body")
+AnimationPlayerWeakupPath = NodePath("AnimationPlayer")
+DestoryPath = NodePath("body/destroy/destory")
+attackPath = NodePath("body/attack/attack")
+ShootPositionPath = [ NodePath("body/attack/shootPositon1"), NodePath("body/attack/shootPositon2"), NodePath("body/attack/shootPositon3"), NodePath("body/attack/shootPositon4") ]
+showPath = NodePath("VisibilityNotifier2D")
+_isBoss = true
+
+[node name="body" type="Node2D" parent="."]
+rotation = 1.5708
+
+[node name="fire" type="Node2D" parent="body"]
+
+[node name="engineFire" type="AnimatedSprite" parent="body/fire"]
+frames = SubResource( 38 )
+animation = "fire"
+frame = 3
+playing = true
+
+[node name="body" type="Node2D" parent="body"]
+
+[node name="body" type="Sprite" parent="body/body"]
+texture = SubResource( 70 )
+hframes = 5
+vframes = 4
+
+[node name="destroy" type="Node2D" parent="body"]
+
+[node name="destory" type="AnimatedSprite" parent="body/destroy"]
+modulate = Color( 1, 1, 1, 0 )
+frames = SubResource( 52 )
+animation = "destroy"
+
+[node name="attack" type="Node2D" parent="body"]
+
+[node name="attack" type="AnimatedSprite" parent="body/attack"]
+modulate = Color( 1, 1, 1, 0 )
+frames = SubResource( 53 )
+animation = "attack"
+frame = 2
+
+[node name="shootPositon2" type="Node2D" parent="body/attack"]
+position = Vector2( 8.66664, -8.00003 )
+
+[node name="shootPositon1" type="Node2D" parent="body/attack"]
+position = Vector2( -8.00003, -7.99997 )
+
+[node name="shootPositon4" type="Node2D" parent="body/attack"]
+position = Vector2( -15.3333, -3.99994 )
+
+[node name="shootPositon3" type="Node2D" parent="body/attack"]
+position = Vector2( 15.3333, -3.33339 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2( 0.666667, 0.666667 )
+build_mode = 1
+polygon = PoolVector2Array( 0, -18.6667, -16, -18.6667, -16, -13.3333, -10.6667, -13.3333, -12, -8.66667, -16.6667, -8.66667, -16.6667, 7.33333, -12, 8, -11.3333, 11.3333, -16, 11.3333, -16, 17.3333, 0, 17.3333, 2, 14, 0, 11.3333, -3.33333, 11.3333, -2.66667, 7.33333, 4.66667, 9.33333, 7.33333, 8, 7.33333, 5.33333, 19.3333, 5.33333, 19.3333, -6.66667, 7.33333, -6.66667, 7.33333, -10, 4.66667, -10.6667, -2.66667, -8.66667, -4, -12.6667, 0, -12.6667, 2.66667, -15.3333 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/weakup = SubResource( 39 )
+
+[node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]

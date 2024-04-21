@@ -1,0 +1,338 @@
+[gd_scene load_steps=31 format=2]
+
+[ext_resource path="res://code/player/Player_coreEngine.cs" type="Script" id=1]
+[ext_resource path="res://art/player/spaceShip_weapon1-Sheet.png" type="Texture" id=2]
+[ext_resource path="res://art/player/spaceShip_base_Sheet.png" type="Texture" id=3]
+[ext_resource path="res://art/player/spaceShip_weapon2.png" type="Texture" id=4]
+
+[sub_resource type="AtlasTexture" id=31]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 0, 528, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=32]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 0, 264, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=33]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 0, 0, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=34]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 0, 660, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=35]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 0, 396, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=36]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 0, 132, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=37]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 0, 594, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=38]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 0, 330, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=39]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 0, 66, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=40]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 0, 726, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=41]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 0, 462, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=42]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 0, 198, 64, 64 )
+
+[sub_resource type="SpriteFrames" id=43]
+animations = [ {
+"frames": [ SubResource( 31 ), SubResource( 32 ), SubResource( 33 ), SubResource( 32 ) ],
+"loop": true,
+"name": "engine_down_on",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 34 ), SubResource( 35 ), SubResource( 36 ), SubResource( 35 ) ],
+"loop": true,
+"name": "engine_left_on ",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 37 ), SubResource( 38 ), SubResource( 39 ), SubResource( 38 ) ],
+"loop": true,
+"name": "engine_right_on",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 40 ), SubResource( 41 ), SubResource( 42 ), SubResource( 41 ) ],
+"loop": true,
+"name": "engine_up_on",
+"speed": 5.0
+} ]
+
+[sub_resource type="AtlasTexture" id=45]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 0, 512, 66, 64 )
+
+[sub_resource type="AtlasTexture" id=46]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 0, 256, 66, 64 )
+
+[sub_resource type="AtlasTexture" id=47]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 0, 0, 66, 64 )
+
+[sub_resource type="AtlasTexture" id=48]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 0, 640, 66, 64 )
+
+[sub_resource type="AtlasTexture" id=49]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 0, 384, 66, 64 )
+
+[sub_resource type="AtlasTexture" id=50]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 0, 128, 66, 64 )
+
+[sub_resource type="AtlasTexture" id=51]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 0, 576, 66, 64 )
+
+[sub_resource type="AtlasTexture" id=52]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 0, 320, 66, 64 )
+
+[sub_resource type="AtlasTexture" id=53]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 0, 64, 66, 64 )
+
+[sub_resource type="AtlasTexture" id=54]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 0, 704, 66, 64 )
+
+[sub_resource type="AtlasTexture" id=55]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 0, 448, 66, 64 )
+
+[sub_resource type="AtlasTexture" id=56]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 0, 192, 66, 64 )
+
+[sub_resource type="SpriteFrames" id=44]
+animations = [ {
+"frames": [ SubResource( 45 ), SubResource( 46 ), SubResource( 47 ), SubResource( 46 ) ],
+"loop": true,
+"name": "engine_down_on",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 48 ), SubResource( 49 ), SubResource( 50 ), SubResource( 49 ) ],
+"loop": true,
+"name": "engine_left_on",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 51 ), SubResource( 52 ), SubResource( 53 ), SubResource( 52 ) ],
+"loop": true,
+"name": "engine_right_on",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 54 ), SubResource( 55 ), SubResource( 56 ), SubResource( 55 ) ],
+"loop": true,
+"name": "engine_up_on",
+"speed": 5.0
+} ]
+
+[node name="Node2D" type="KinematicBody2D"]
+collision_mask = 12
+script = ExtResource( 1 )
+InterfacePosition1Path = NodePath("interfaceUp")
+InterfacePosition2Path = NodePath("interfaceDown")
+InterfacePosition3Path = NodePath("interfaceLeft")
+InterfacePosition4Path = NodePath("interfaceRight")
+TestInfoPath = NodePath("TestInfo")
+engine1_on_animatePath = NodePath("deriverdPart/base/engine_up_on")
+engine2_on_animatePath = NodePath("deriverdPart/base/engine_down_on")
+engine3_on_animatePath = NodePath("deriverdPart/base/engine_left_on")
+engine4_on_animatePath = NodePath("deriverdPart/base/engine_right_on")
+engine1_pic_DamagedPath = NodePath("deriverdPart/base/deriverdBase1")
+engine1_pic_SlightDamagedPath = NodePath("deriverdPart/base/deriverdBase2")
+engine1_pic_VeryDamagedPath = NodePath("deriverdPart/base/deriverdBase3")
+engine7_on_animatePath = NodePath("deriverdPart/top/baseEngine/engine_up_on")
+engine8_on_animatePath = NodePath("deriverdPart/top/baseEngine/engine_down_on")
+engine9_on_animatePath = NodePath("deriverdPart/top/baseEngine/engine_left_on")
+engine10_on_animatePath = NodePath("deriverdPart/top/baseEngine/engine_right_on")
+
+[node name="deriverdPart" type="Node2D" parent="."]
+
+[node name="base" type="Node2D" parent="deriverdPart"]
+
+[node name="engine_down_off" type="Sprite" parent="deriverdPart/base"]
+texture = ExtResource( 3 )
+vframes = 20
+frame = 13
+
+[node name="engine_left_off" type="Sprite" parent="deriverdPart/base"]
+texture = ExtResource( 3 )
+vframes = 20
+frame = 15
+
+[node name="engine_right_off" type="Sprite" parent="deriverdPart/base"]
+texture = ExtResource( 3 )
+vframes = 20
+frame = 14
+
+[node name="engine_up_off" type="Sprite" parent="deriverdPart/base"]
+texture = ExtResource( 3 )
+vframes = 20
+frame = 12
+
+[node name="engine_down_on" type="AnimatedSprite" parent="deriverdPart/base"]
+modulate = Color( 1, 1, 1, 0 )
+frames = SubResource( 43 )
+animation = "engine_down_on"
+
+[node name="engine_left_on" type="AnimatedSprite" parent="deriverdPart/base"]
+modulate = Color( 1, 1, 1, 0 )
+frames = SubResource( 43 )
+animation = "engine_left_on "
+frame = 3
+
+[node name="engine_right_on" type="AnimatedSprite" parent="deriverdPart/base"]
+modulate = Color( 1, 1, 1, 0 )
+frames = SubResource( 43 )
+animation = "engine_right_on"
+
+[node name="engine_up_on" type="AnimatedSprite" parent="deriverdPart/base"]
+modulate = Color( 1, 1, 1, 0 )
+frames = SubResource( 43 )
+animation = "engine_up_on"
+frame = 2
+playing = true
+
+[node name="deriverdBase" type="Sprite" parent="deriverdPart/base"]
+texture = ExtResource( 3 )
+vframes = 20
+frame = 16
+
+[node name="deriverdBase1" type="Sprite" parent="deriverdPart/base"]
+modulate = Color( 1, 1, 1, 0 )
+texture = ExtResource( 3 )
+vframes = 20
+frame = 19
+
+[node name="deriverdBase2" type="Sprite" parent="deriverdPart/base"]
+modulate = Color( 1, 1, 1, 0 )
+texture = ExtResource( 3 )
+vframes = 20
+frame = 18
+
+[node name="deriverdBase3" type="Sprite" parent="deriverdPart/base"]
+modulate = Color( 1, 1, 1, 0 )
+texture = ExtResource( 3 )
+vframes = 20
+frame = 17
+
+[node name="top" type="Node2D" parent="deriverdPart"]
+
+[node name="baseEngine" type="Node2D" parent="deriverdPart/top"]
+
+[node name="engine_down_off" type="Sprite" parent="deriverdPart/top/baseEngine"]
+texture = ExtResource( 4 )
+vframes = 20
+frame = 13
+
+[node name="engine_left_off" type="Sprite" parent="deriverdPart/top/baseEngine"]
+texture = ExtResource( 4 )
+vframes = 20
+frame = 15
+
+[node name="engine_right_off" type="Sprite" parent="deriverdPart/top/baseEngine"]
+texture = ExtResource( 4 )
+vframes = 20
+frame = 14
+
+[node name="engine_up_off" type="Sprite" parent="deriverdPart/top/baseEngine"]
+texture = ExtResource( 4 )
+vframes = 20
+frame = 12
+
+[node name="engine_down_on" type="AnimatedSprite" parent="deriverdPart/top/baseEngine"]
+modulate = Color( 1, 1, 1, 0 )
+position = Vector2( 0, -2 )
+frames = SubResource( 44 )
+animation = "engine_down_on"
+frame = 3
+
+[node name="engine_left_on" type="AnimatedSprite" parent="deriverdPart/top/baseEngine"]
+modulate = Color( 1, 1, 1, 0 )
+position = Vector2( 0, -2 )
+frames = SubResource( 44 )
+animation = "engine_left_on"
+
+[node name="engine_right_on" type="AnimatedSprite" parent="deriverdPart/top/baseEngine"]
+modulate = Color( 1, 1, 1, 0 )
+position = Vector2( 0, -2 )
+frames = SubResource( 44 )
+animation = "engine_right_on"
+frame = 3
+
+[node name="engine_up_on" type="AnimatedSprite" parent="deriverdPart/top/baseEngine"]
+modulate = Color( 1, 1, 1, 0 )
+position = Vector2( 0, -2 )
+frames = SubResource( 44 )
+animation = "engine_up_on"
+
+[node name="base" type="Sprite" parent="deriverdPart/top"]
+texture = ExtResource( 4 )
+vframes = 20
+frame = 16
+
+[node name="interfaceUp" type="Node2D" parent="."]
+position = Vector2( 0, -32 )
+
+[node name="interfaceDown" type="Node2D" parent="."]
+position = Vector2( 0, 32 )
+
+[node name="interfaceLeft" type="Node2D" parent="."]
+position = Vector2( -32, 0 )
+
+[node name="interfaceRight" type="Node2D" parent="."]
+position = Vector2( 32, 0 )
+
+[node name="TestInfo" type="Label" parent="."]
+margin_left = 32.0
+margin_top = -25.0
+margin_right = 124.0
+margin_bottom = -11.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PoolVector2Array( 11, 32, 11, 24, 15, 24, 15, 15, 22, 13, 32, 9, 32, -9, 23, -15, 15, -16, 15, -25, 10, -25, 10, -30, -10, -30, -10, -25, -16, -25, -16, -18, -21, -15, -31, -9, -31, 8, -22, 14, -15, 14, -15, 24, -9, 24, -9, 32 )

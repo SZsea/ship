@@ -1,0 +1,46 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://code/UI/PauseUILayer.cs" type="Script" id=1]
+[ext_resource path="res://art/font/BoutiqueBitmap9x9_1.9.ttf" type="DynamicFontData" id=2]
+
+[sub_resource type="DynamicFont" id=1]
+size = 30
+font_data = ExtResource( 2 )
+
+[node name="pauseUILayer" type="CanvasLayer"]
+script = ExtResource( 1 )
+ContinueButtonPath = NodePath("continueButton")
+returnButtonPath = NodePath("returnButton")
+LablePath = NodePath("Label")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_right = 1931.0
+margin_bottom = 1092.0
+color = Color( 0, 0, 0, 0.831373 )
+
+[node name="continueButton" type="Button" parent="."]
+margin_left = 835.0
+margin_top = 399.0
+margin_right = 1069.0
+margin_bottom = 501.0
+custom_fonts/font = SubResource( 1 )
+action_mode = 0
+text = "继续"
+
+[node name="returnButton" type="Button" parent="."]
+margin_left = 835.0
+margin_top = 596.0
+margin_right = 1069.0
+margin_bottom = 698.0
+custom_fonts/font = SubResource( 1 )
+text = "返回"
+
+[node name="Label" type="Label" parent="."]
+margin_left = 656.0
+margin_top = 150.0
+margin_right = 1250.0
+margin_bottom = 305.0
+custom_fonts/font = SubResource( 1 )
+text = "暂停中"
+align = 1
+valign = 1

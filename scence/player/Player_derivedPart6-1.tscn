@@ -1,0 +1,391 @@
+[gd_scene load_steps=26 format=2]
+
+[ext_resource path="res://code/player/Player_derivedPart.cs" type="Script" id=1]
+[ext_resource path="res://art/player/spaceShip_weapon5.png" type="Texture" id=2]
+[ext_resource path="res://art/player/spaceShip_weapon8.png" type="Texture" id=3]
+
+[sub_resource type="StreamTexture" id=54]
+resource_local_to_scene = true
+flags = 4
+load_path = "res://.import/spaceShip_weapon5.png-8622cc174e36f74a68bb0456b0b5f376.stex"
+
+[sub_resource type="AtlasTexture" id=55]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 0, 0, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=56]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 256, 0, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=57]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 128, 64, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=58]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 128, 0, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=59]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 0, 64, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=60]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 256, 64, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=61]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 64, 0, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=62]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 320, 0, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=63]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 192, 64, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=64]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 192, 0, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=65]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 64, 64, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=66]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 320, 64, 64, 64 )
+
+[sub_resource type="SpriteFrames" id=15]
+animations = [ {
+"frames": [ SubResource( 55 ), SubResource( 56 ), SubResource( 57 ), SubResource( 56 ) ],
+"loop": true,
+"name": "engine_down_on",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 58 ), SubResource( 59 ), SubResource( 60 ), SubResource( 59 ) ],
+"loop": true,
+"name": "engine_left_on ",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 61 ), SubResource( 62 ), SubResource( 63 ), SubResource( 62 ) ],
+"loop": true,
+"name": "engine_right_on",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 64 ), SubResource( 65 ), SubResource( 66 ), SubResource( 65 ) ],
+"loop": true,
+"name": "engine_up_on",
+"speed": 5.0
+} ]
+
+[sub_resource type="AtlasTexture" id=88]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 128, 192, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=89]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 192, 192, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=90]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 256, 192, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=91]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 320, 192, 64, 64 )
+
+[sub_resource type="SpriteFrames" id=53]
+resource_local_to_scene = true
+animations = [ {
+"frames": [ SubResource( 88 ), SubResource( 89 ), SubResource( 90 ), SubResource( 91 ), SubResource( 91 ) ],
+"loop": true,
+"name": "shoot",
+"speed": 10.0
+} ]
+
+[sub_resource type="StreamTexture" id=74]
+resource_local_to_scene = true
+flags = 4
+load_path = "res://.import/spaceShip_weapon8.png-9d9da9232acddc93dd846ef0a8349c1a.stex"
+
+[sub_resource type="Animation" id=86]
+resource_name = "fire"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("weaponAnimateControl/weaponAnimation:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0, 6 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("weaponAnimateControl:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 0, 5 ) ]
+}
+tracks/2/type = "method"
+tracks/2/path = NodePath("../..")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0.5 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "shootByAnimation"
+} ]
+}
+tracks/3/type = "method"
+tracks/3/path = NodePath("../..")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0.5 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "shootByAnimation"
+} ]
+}
+tracks/4/type = "method"
+tracks/4/path = NodePath("../..")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0.5 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "shootByAnimation"
+} ]
+}
+
+[sub_resource type="Animation" id=87]
+resource_name = "idle"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath("weaponAnimateControl/weaponAnimation:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 5, 0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("weaponAnimateControl:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 5 ), Vector2( 0, 0 ) ]
+}
+
+[node name="Node2D" type="KinematicBody2D"]
+collision_mask = 12
+script = ExtResource( 1 )
+InterfacePosition1Path = NodePath("interfaceDown")
+InterfacePosition2Path = NodePath("interfaceLeft")
+InterfacePosition3Path = NodePath("interfaceRight")
+InterfacePosition4Path = NodePath("interfaceUp")
+TestInfoPath = NodePath("TestInfo")
+engine1_on_animatePath = NodePath("deriverdPart/base/engine_down_on")
+engine2_on_animatePath = NodePath("deriverdPart/base/engine_left_on")
+engine3_on_animatePath = NodePath("deriverdPart/base/engine_right_on")
+engine4_on_animatePath = NodePath("deriverdPart/base/engine_up_on")
+engine_pic_DamagedPath = NodePath("deriverdPart/base/deriverdBase1")
+engine_pic_SlightDamagedPath = NodePath("deriverdPart/base/deriverdBase2")
+engine_pic_VeryDamagedPath = NodePath("deriverdPart/base/deriverdBase3")
+weaponAnimationPath = NodePath("deriverdPart/weapon/AnimationPlayer")
+ShootPositionPath = [ NodePath("deriverdPart/weapon/weaponAnimateControl/shootPosition1"), NodePath("deriverdPart/weapon/weaponAnimateControl/shootPosition2"), NodePath("deriverdPart/weapon/weaponAnimateControl/shootPosition3") ]
+weaponPath = NodePath("deriverdPart/weapon")
+weapon_pic_DamagedPath = NodePath("deriverdPart/weapon/weaponAnimateControl/weaponColor1")
+weapon_pic_SlightDamagedPath = NodePath("deriverdPart/weapon/weaponAnimateControl/weaponColor2")
+weapon_pic_VeryDamagedPath = NodePath("deriverdPart/weapon/weaponAnimateControl/weaponColor3")
+
+[node name="deriverdPart" type="Node2D" parent="."]
+
+[node name="base" type="Node2D" parent="deriverdPart"]
+
+[node name="engine_down_off" type="Sprite" parent="deriverdPart/base"]
+texture = SubResource( 54 )
+hframes = 6
+vframes = 5
+frame = 12
+
+[node name="engine_left_off" type="Sprite" parent="deriverdPart/base"]
+texture = SubResource( 54 )
+hframes = 6
+vframes = 5
+frame = 14
+
+[node name="engine_right_off" type="Sprite" parent="deriverdPart/base"]
+texture = SubResource( 54 )
+hframes = 6
+vframes = 5
+frame = 13
+
+[node name="engine_up_off" type="Sprite" parent="deriverdPart/base"]
+texture = SubResource( 54 )
+hframes = 6
+vframes = 5
+frame = 15
+
+[node name="engine_down_on" type="AnimatedSprite" parent="deriverdPart/base"]
+modulate = Color( 1, 1, 1, 0 )
+position = Vector2( 0, 1 )
+frames = SubResource( 15 )
+animation = "engine_down_on"
+frame = 3
+
+[node name="engine_left_on" type="AnimatedSprite" parent="deriverdPart/base"]
+modulate = Color( 1, 1, 1, 0 )
+position = Vector2( 0, 1 )
+frames = SubResource( 15 )
+animation = "engine_left_on "
+frame = 2
+
+[node name="engine_right_on" type="AnimatedSprite" parent="deriverdPart/base"]
+modulate = Color( 1, 1, 1, 0 )
+position = Vector2( 0, 1 )
+frames = SubResource( 15 )
+animation = "engine_right_on"
+
+[node name="engine_up_on" type="AnimatedSprite" parent="deriverdPart/base"]
+modulate = Color( 1, 1, 1, 0 )
+position = Vector2( 0, 1 )
+frames = SubResource( 15 )
+animation = "engine_up_on"
+
+[node name="deriverdBase" type="Sprite" parent="deriverdPart/base"]
+texture = SubResource( 54 )
+hframes = 6
+vframes = 5
+frame = 16
+
+[node name="deriverdBase1" type="Sprite" parent="deriverdPart/base"]
+modulate = Color( 1, 1, 1, 0 )
+texture = SubResource( 54 )
+hframes = 6
+vframes = 5
+frame = 17
+
+[node name="deriverdBase2" type="Sprite" parent="deriverdPart/base"]
+modulate = Color( 1, 1, 1, 0 )
+texture = SubResource( 54 )
+hframes = 6
+vframes = 5
+frame = 18
+
+[node name="deriverdBase3" type="Sprite" parent="deriverdPart/base"]
+modulate = Color( 1, 1, 1, 0 )
+texture = SubResource( 54 )
+hframes = 6
+vframes = 5
+frame = 18
+
+[node name="weapon" type="Node2D" parent="deriverdPart"]
+
+[node name="weaponAnimateControl" type="Node2D" parent="deriverdPart/weapon"]
+
+[node name="shootPosition1" type="Node2D" parent="deriverdPart/weapon/weaponAnimateControl"]
+position = Vector2( -12, -26 )
+
+[node name="shootPosition2" type="Node2D" parent="deriverdPart/weapon/weaponAnimateControl"]
+position = Vector2( 0, -26 )
+
+[node name="shootPosition3" type="Node2D" parent="deriverdPart/weapon/weaponAnimateControl"]
+position = Vector2( 12, -26 )
+
+[node name="weaponAnimation" type="AnimatedSprite" parent="deriverdPart/weapon/weaponAnimateControl"]
+frames = SubResource( 53 )
+animation = "shoot"
+
+[node name="weaponColor1" type="Sprite" parent="deriverdPart/weapon/weaponAnimateControl"]
+modulate = Color( 1, 1, 1, 0 )
+texture = SubResource( 74 )
+hframes = 6
+vframes = 5
+frame = 25
+
+[node name="weaponColor2" type="Sprite" parent="deriverdPart/weapon/weaponAnimateControl"]
+modulate = Color( 1, 1, 1, 0 )
+texture = SubResource( 74 )
+hframes = 6
+vframes = 5
+frame = 26
+
+[node name="weaponColor3" type="Sprite" parent="deriverdPart/weapon/weaponAnimateControl"]
+modulate = Color( 1, 1, 1, 0 )
+texture = SubResource( 74 )
+hframes = 6
+vframes = 5
+frame = 27
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="deriverdPart/weapon"]
+anims/fire = SubResource( 86 )
+anims/idle = SubResource( 87 )
+
+[node name="interfaceUp" type="Node2D" parent="."]
+position = Vector2( 0, -32 )
+
+[node name="interfaceDown" type="Node2D" parent="."]
+position = Vector2( 0, 32 )
+
+[node name="interfaceLeft" type="Node2D" parent="."]
+position = Vector2( -32, 0 )
+
+[node name="interfaceRight" type="Node2D" parent="."]
+position = Vector2( 32, 0 )
+
+[node name="TestInfo" type="Label" parent="."]
+margin_left = 33.0
+margin_top = -26.0
+margin_right = 125.0
+margin_bottom = -12.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PoolVector2Array( 11, 32, 11, 24, 15, 24, 15, 15, 22, 9, 32, 9, 32, -9, 20, -9, 15, -16, 15, -25, 10, -25, 10, -30, -10, -30, -10, -25, -16, -25, -16, -18, -19, -15, -19, -9, -31, -9, -31, 8, -20, 8, -15, 14, -15, 24, -9, 24, -9, 32 )
