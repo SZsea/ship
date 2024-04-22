@@ -329,7 +329,7 @@ public class GameData : Node2D
                 if (key == SaveData_playerEverPlayedLevel)
                     playerEverPlayedLevel = entry.Value.ToString().ToInt();
                 if (key == SaveData_playerLastPlayerLevel)
-                    playerEverPlayedLevel = entry.Value.ToString().ToInt();
+                    playerLastPlayerLevel = entry.Value.ToString().ToInt();
                 if (key == SaveData_playerUsedLanguage)
                 {
                     if (entry.Value.ToString().ToInt() == 0)
