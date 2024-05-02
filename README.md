@@ -4,7 +4,7 @@
 
 在几个月的学习以及开发下 由于某些原因 实在难以完成
 
-所以现将它免费公开出来(正在发布steam 免费开玩)
+所以现将它免费公开出来(steam地址 免费开玩 https://store.steampowered.com/app/2953240/modified_spaceship/?beta=0)
 
 所以无论你是否用于商业或者非商业领域 都可以
 
